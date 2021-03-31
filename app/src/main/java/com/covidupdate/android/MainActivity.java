@@ -17,5 +17,6 @@ public class MainActivity extends AppCompatActivity {
             Objects.requireNonNull(this.getSupportActionBar()).hide();
         } catch (NullPointerException ignored) {
         }
+
     }
 }
