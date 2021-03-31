@@ -4,118 +4,472 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/content"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="-1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/card_design_1"
-            android:elevation="4dp"
-            android:layout_margin="5dp"
-            android:padding="12dp">
+            android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_centerVertical="true">
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/card_design_1"
+                android:baselineAligned="false"
+                android:elevation="4dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="5dp">
 
-                <ImageView
-                    android:id="@+id/menu_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_baseline_menu_24" />
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="45dp"
+                    android:layout_height="45dp">
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/menu_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/menu" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/covid_19_daily_update"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Coronavirus Cases:"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="128,932,176"
+                        android:textColor="@color/grey"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Deaths:"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="2,818,762"
+                        android:textColor="#F25022"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Recovered:"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="104,028,025"
+                        android:textColor="#8AC800"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="17dp"
+                android:paddingTop="5dp"
+                android:paddingRight="17dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="COVID-19 (Update)"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:text="Reported Cases and Deaths by Country or Territory"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
                     android:textStyle="bold" />
 
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="World Wide"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="India"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="11dp"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="United States"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_margin="8.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/helpline_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/helpline" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_below="@+id/helpline_img"
+                        android:layout_centerHorizontal="true"
+                        android:text="Helpline"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_margin="8.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="5dp" >
+
+                    <ImageView
+                        android:id="@+id/masktips_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/mask_tips" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_below="@+id/masktips_img"
+                        android:layout_centerHorizontal="true"
+                        android:text="Mask Tips"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_margin="8.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="5dp" >
+
+                    <ImageView
+                        android:id="@+id/precautionary_measure_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/precautionary_measure" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_below="@+id/precautionary_measure_img"
+                        android:layout_centerHorizontal="true"
+                        android:text="Precautions"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_margin="8.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="5dp" >
+
+                    <ImageView
+                        android:id="@+id/suggestion_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/suggestion" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_below="@+id/suggestion_img"
+                        android:layout_centerHorizontal="true"
+                        android:text="Suggestions"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_margin="8.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="5dp" >
+
+                    <ImageView
+                        android:id="@+id/rate_us_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/rate_us" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_below="@+id/rate_us_img"
+                        android:layout_centerHorizontal="true"
+                        android:text="Rate Us"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_margin="8.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="5dp" >
+
+                    <ImageView
+                        android:id="@+id/disclaimer_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/disclaimer" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_below="@+id/disclaimer_img"
+                        android:layout_centerHorizontal="true"
+                        android:text="Disclaimer"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="8.5dp"
+                    android:layout_marginTop="8.5dp"
+                    android:layout_marginRight="8.5dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_design_1"
+                    android:elevation="5dp"
+                    android:weightSum="1" >
+
+                    <ImageView
+                        android:id="@+id/about_us_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="112dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/about_us" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_toEndOf="@+id/about_us_img"
+                        android:layout_centerVertical="true"
+                        android:text="About Us"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
+    </ScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp"
-            android:background="@color/white">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Coronavirus Cases:"
-                android:textSize="25sp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="128,932,176"
-                android:textStyle="bold"
-                android:textSize="40sp"
-                android:gravity="center"
-                android:layout_marginBottom="5dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Deaths:"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="2,818,762"
-                android:textStyle="bold"
-                android:textColor="#F25022"
-                android:textSize="40sp"
-                android:gravity="center"
-                android:layout_marginBottom="5dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Recovered:"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="104,028,025"
-                android:textColor="#8AC800"
-                android:textStyle="bold"
-                android:textSize="40sp"
-                android:gravity="center"
-                android:layout_marginBottom="5dp"/>
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
