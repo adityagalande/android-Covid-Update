@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Services.Suggestions">
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/feedDataExternal"
+        android:layout_marginStart="17dp"
+        android:shadowColor="#67587686"
+        android:gravity="center_horizontal"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="5"
+        android:text="@string/suggestion"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:padding="4dp"/>
+
+    <RelativeLayout
+        android:id="@+id/feedDataExternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="17dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/card_design_1"
+        android:elevation="20dp">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/feedData"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="110dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginBottom="17dp"
+                android:background="#D8D8D8"
+                tools:ignore="RtlSymmetry">
+
+
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="120dp"
+                    android:layout_marginRight="10dp"
+                    android:autofillHints=""
+                    android:layout_alignParentEnd="true"
+                    android:background="@color/red"
+                    android:elevation="10dp"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/enter_name"
+                    android:inputType="textPersonName"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:minLines="1"
+                    android:padding="6dp"
+                    android:scrollbars="vertical" />
+
+                <EditText
+                    android:id="@+id/emailSubject"
+                    android:layout_width="205dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="10dp"
+                    android:autofillHints=""
+                    android:background="@color/yellow"
+                    android:elevation="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/subject"
+                    android:inputType="textEmailSubject"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:padding="6dp" />
+
+                <EditText
+                    android:id="@+id/emailMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_below="@+id/emailSubject"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:autofillHints=""
+                    android:background="@color/blue"
+                    android:elevation="10dp"
+                    android:gravity="top|start"
+                    android:hint="@string/enter_message"
+                    android:lines="8"
+                    android:maxLines="20"
+                    android:minLines="2"
+                    android:padding="6dp"
+                    android:scrollbars="vertical"
+                    android:inputType="textLongMessage" />
+
+                <RelativeLayout
+                    android:id="@+id/sendFeedbackButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/emailMessage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/green"
+                    android:clickable="true"
+                    android:elevation="10dp"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="@string/send"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <ImageView
+            android:layout_width="210dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/suggestion_man" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

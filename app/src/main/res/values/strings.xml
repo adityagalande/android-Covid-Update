@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Covid Update</string>
     <string name="covid_19_daily_update">COVID-19 (Daily Update)</string>
+    <string name="episode_2">Episode #2 - SARS-CoV-2</string>
+    <string name="episode_1">Episode #1 - Herd immunity</string>
+    <string name="episode_3">Episode #3 - COVID-19 Myths Vs Science</string>
+    <string name="episode_4">Episode #4 - Reopening Schools</string>
+    <string name="episode_5">Episode #5 - Vaccines</string>
+    <string name="episode_6">Episode #6 - Flu and COVID-19</string>
+    <string name="episode_7">Episode #7 - Serological surveys</string>
+    <string name="episode_8">Episode #8 - Myth vs Science</string>
+    <string name="episode_9">Episode #9 - Air pollution and COVID-19</string>
+    <string name="episode_10">Episode #10 - Ventilation and COVID-19</string>
+    <string name="episode_11">Episode #11 - Antibiotics and COVID-19</string>
+    <string name="episode_12">Episode #12 - Safe celebrations during the Pandemic</string>
+    <string name="episode_13">Episode #13 - COVID-19 - Vaccine trials</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="send">SEND</string>
+    <string name="enter_message">Enter Message</string>
+    <string name="subject">Subject</string>
+    <string name="enter_name">Enter Name</string>
 </resources>

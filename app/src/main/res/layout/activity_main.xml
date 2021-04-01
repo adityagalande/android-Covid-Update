@@ -11,7 +11,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-1dp">
+        tools:layout_editor_absoluteX="-1dp"
+        android:scrollbars="none" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -218,63 +219,69 @@
                 android:paddingRight="16dp">
 
                 <RelativeLayout
+                    android:id="@+id/helpline_view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_design_1"
-                    android:elevation="5dp">
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/helpline_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
-                        android:layout_marginTop="5dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/helpline" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="1dp"
                         android:layout_below="@+id/helpline_img"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
                         android:text="Helpline"
-                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/masktips_view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_design_1"
-                    android:elevation="5dp" >
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/masktips_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
-                        android:layout_marginTop="5dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/mask_tips" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="1dp"
                         android:layout_below="@+id/masktips_img"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
                         android:text="Mask Tips"
-                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -288,64 +295,70 @@
                 android:paddingRight="16dp">
 
                 <RelativeLayout
+                    android:id="@+id/precautionary__view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_design_1"
-                    android:elevation="5dp" >
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/precautionary_measure_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
-                        android:layout_marginTop="5dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/precautionary_measure" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="1dp"
                         android:layout_below="@+id/precautionary_measure_img"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
                         android:text="Precautions"
-                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/suggestion_view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_design_1"
-                    android:elevation="5dp" >
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/suggestion_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
-                        android:layout_marginTop="5dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/suggestion" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="1dp"
                         android:layout_below="@+id/suggestion_img"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
                         android:text="Suggestions"
-                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -359,64 +372,70 @@
                 android:paddingRight="16dp">
 
                 <RelativeLayout
+                    android:id="@+id/rate_us_view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_design_1"
-                    android:elevation="5dp" >
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/rate_us_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
-                        android:layout_marginTop="5dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/rate_us" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="1dp"
                         android:layout_below="@+id/rate_us_img"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
                         android:text="Rate Us"
-                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/disclaimer_view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_design_1"
-                    android:elevation="5dp" >
+                    android:clickable="true"
+                    android:elevation="5dp"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/disclaimer_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
-                        android:layout_marginTop="5dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/disclaimer" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="1dp"
                         android:layout_below="@+id/disclaimer_img"
                         android:layout_centerHorizontal="true"
-                        android:text="Disclaimer"
-                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:text="Advisory Video"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -430,6 +449,7 @@
                 android:paddingRight="16dp">
 
                 <RelativeLayout
+                    android:id="@+id/about_us_view"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="8.5dp"
@@ -438,29 +458,31 @@
                     android:layout_marginBottom="12dp"
                     android:layout_weight="1"
                     android:background="@drawable/card_design_1"
+                    android:clickable="true"
                     android:elevation="5dp"
-                    android:weightSum="1" >
+                    android:focusable="true"
+                    android:weightSum="1">
 
                     <ImageView
                         android:id="@+id/about_us_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
-                        android:layout_marginTop="5dp"
                         android:layout_alignParentStart="true"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/about_us" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="1dp"
                         android:layout_toEndOf="@+id/about_us_img"
-                        android:layout_centerVertical="true"
                         android:text="About Us"
-                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
