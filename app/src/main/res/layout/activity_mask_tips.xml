@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Services.MaskTips">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        tools:layout_editor_absoluteX="-1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="17dp"
+                android:background="@drawable/card_design_1"
+                android:elevation="5dp">
+
+                <TextView
+                    android:id="@+id/titleStayHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="#67587686"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5"
+                    android:text="STAY HOME SAVE LIVES"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/stayHomeSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleStayHome"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    tools:text="1. Stay Home" />
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/stayHomeSteps"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="17dp"
+                    android:src="@drawable/prevention_tips" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="17dp"
+                android:background="@drawable/card_design_1"
+                android:elevation="5dp">
+
+                <TextView
+                    android:id="@+id/titleHandWash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="#67587686"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5"
+                    android:text="WASH HANDS OFTEN"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Handwash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleHandWash"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    tools:text="1. Stay Home" />
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:layout_below="@+id/Handwash"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="17dp"
+                    android:src="@drawable/handwashing_tips" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
