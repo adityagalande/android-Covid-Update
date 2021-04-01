@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidUpdate">
+        <activity android:name=".Services.Disclaimer"></activity>
+        <activity android:name=".Services.AboutUs" />
+        <activity android:name=".Services.Suggestions" />
+        <activity android:name=".Services.Precautions" />
+        <activity android:name=".Services.MaskTips" />
+        <activity android:name=".Services.Helpline" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
