@@ -118,6 +118,205 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="17dp"
+                android:background="@drawable/card_design_1"
+                android:elevation="5dp">
+
+                <TextView
+                    android:id="@+id/socialDistancing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="#67587686"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5"
+                    android:text="AVOID SOCIAL CONTACT"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/socialDistancingSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/socialDistancing"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    tools:text="1. Stay Home" />
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/socialDistancingSteps"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="17dp"
+                    android:src="@drawable/social_distancing" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="17dp"
+                android:background="@drawable/card_design_1"
+                android:elevation="5dp">
+
+                <TextView
+                    android:id="@+id/coverMouth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="#67587686"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5"
+                    android:text="COVER MOUTH AND NOSE"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/coverMouthSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/coverMouth"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    tools:text="1. Stay Home" />
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/coverMouthSteps"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="17dp"
+                    android:src="@drawable/cover_mouth_nose" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="17dp"
+                android:background="@drawable/card_design_1"
+                android:elevation="5dp">
+
+                <TextView
+                    android:id="@+id/disinfect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="#67587686"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5"
+                    android:text="CLEAN AND DISINFECT FREQUENTLY TOUCHED SURFACES DAILY"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/disinfectSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/disinfect"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    tools:text="1. Stay Home" />
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/disinfectSteps"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="17dp"
+                    android:src="@drawable/disinfect" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="17dp"
+                android:background="@drawable/card_design_1"
+                android:elevation="5dp">
+
+                <TextView
+                    android:id="@+id/titleStayHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="#67587686"
+                    android:shadowDx="10"
+                    android:shadowDy="10"
+                    android:shadowRadius="5"
+                    android:text="HOW TO WEAR AND REMOVE MASK"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/stayHomeSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleStayHome"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    tools:text="1. Stay Home" />
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/stayHomeSteps"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="17dp"
+                    android:src="@drawable/wear_masks" />
+
+            </RelativeLayout>
+
         </LinearLayout>
 
     </ScrollView>
