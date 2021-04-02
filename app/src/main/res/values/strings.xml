@@ -19,4 +19,6 @@
     <string name="enter_message">Enter Message</string>
     <string name="subject">Subject</string>
     <string name="enter_name">Enter Name</string>
+    <string name="send_us_your_suggestion_title">Send us your suggestion !</string>
+    <string name="send_suggestion">Send Suggestion</string>
 </resources>

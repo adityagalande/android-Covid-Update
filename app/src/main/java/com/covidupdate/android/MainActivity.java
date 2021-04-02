@@ -82,6 +82,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent suggestion = new Intent(MainActivity.this, Suggestions.class);
                 startActivity(suggestion);
+
+//                Intent email= new Intent(Intent.ACTION_VIEW);
+//                email.setType("message/rfc822")
+//                        .setData(Uri.parse("mailto:adityagalande14@gmail.com"))
+//                        .putExtra(Intent.EXTRA_EMAIL, "your.email@gmail.com")
+//                        .putExtra(Intent.EXTRA_SUBJECT, "Subject")
+//                        .putExtra(Intent.EXTRA_TEXT, "My Email message")
+//                        .setPackage("com.google.android.gm");
+//                startActivity(email);
+
             }
         });
 
