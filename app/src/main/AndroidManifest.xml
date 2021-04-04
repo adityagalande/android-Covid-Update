@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.covidupdate.android">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,13 +10,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidUpdate">
-        <activity android:name=".Services.Disclaimer"></activity>
-        <activity android:name=".Services.AboutUs" />
-        <activity android:name=".Services.Suggestions" />
-        <activity android:name=".Services.Precautions" />
-        <activity android:name=".Services.MaskTips" />
-        <activity android:name=".Services.Helpline" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".Services.Disclaimer"
+            android:screenOrientation = "portrait"/>
+
+        <activity android:name=".Services.AboutUs"
+            android:screenOrientation = "portrait"/>
+
+        <activity android:name=".Services.Suggestions"
+            android:screenOrientation = "portrait"/>
+
+        <activity android:name=".Services.Precautions"
+            android:screenOrientation = "portrait"/>
+
+        <activity android:name=".Services.MaskTips"
+            android:screenOrientation = "portrait"/>
+
+        <activity android:name=".Services.Helpline"
+            android:screenOrientation = "portrait"/>
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation = "portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

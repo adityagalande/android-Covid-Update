@@ -11,8 +11,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-1dp"
-        android:scrollbars="none" >
+        android:scrollbars="none"
+        tools:layout_editor_absoluteX="-1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -328,8 +328,9 @@
 
                 </RelativeLayout>
 
+
                 <RelativeLayout
-                    android:id="@+id/suggestion_view"
+                    android:id="@+id/disclaimer_view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
@@ -340,22 +341,22 @@
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/suggestion_img"
+                        android:id="@+id/disclaimer_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/suggestion" />
+                        android:src="@drawable/disclaimer" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/suggestion_img"
+                        android:layout_below="@+id/disclaimer_img"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="1dp"
-                        android:text="Suggestions"
+                        android:text="Advisory Video"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -406,7 +407,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/disclaimer_view"
+                    android:id="@+id/suggestion_view"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
                     android:layout_margin="8.5dp"
@@ -417,22 +418,22 @@
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/disclaimer_img"
+                        android:id="@+id/suggestion_img"
                         android:layout_width="wrap_content"
                         android:layout_height="112dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
-                        android:src="@drawable/disclaimer" />
+                        android:src="@drawable/suggestion" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/disclaimer_img"
+                        android:layout_below="@+id/suggestion_img"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="1dp"
-                        android:text="Advisory Video"
+                        android:text="Suggestions"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
