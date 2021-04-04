@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.covidupdate.android.AdvisoryAdapterClass.Advisory;
@@ -25,10 +26,8 @@ public class Disclaimer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disclaimer);
 
-        try {
-            Objects.requireNonNull(this.getSupportActionBar()).hide();
-        } catch (NullPointerException ignored) {
-        }
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.disclaimer_action_bar);
 
         final ArrayList<Advisory> advisoryContent = new ArrayList<>();
         advisoryContent.add(new Advisory("Episode #1 - Herd immunity", "https://youtu.be/U47SaDAmyrE"));

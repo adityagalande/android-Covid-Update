@@ -1,5 +1,6 @@
 package com.covidupdate.android.Services;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -16,80 +17,102 @@ import java.util.Objects;
 
 public class MaskTips extends AppCompatActivity {
 
-    private  String stayHomeSteps;
-    private String handWash;
-    private String socialDistancing;
-    private String coverMouth;
-    private String disinfect;
-
-    private TextView stayHomeStepstextView;
-    private TextView handWashtextView;
-    private TextView socialDistancingtextView;
-    private TextView coverMouthtextView;
-    private TextView disinfecttextView;
+    private  String wearMasksSteps;
+    private String removeMaskSteps;
+    private TextView wearMasksTextView;
+    private TextView removeMaskTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mask_tips);
 
-        try {
-            Objects.requireNonNull(this.getSupportActionBar()).hide();
-        } catch (NullPointerException ignored) {
-        }
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.mask_tips_action_bar);
 
-        stayHomeSteps = "1. Stay Home\n\n2. KEEP a safe distance\n\n3. WASH hands often\n\n4. COVER your cough\n\n5. SICK? call the helpline\n\n\n\nHow to Protect Yourself and Other from the spread" ;
 
-        handWash = "Wash your hands often with soap and water\n" +
-                "for at least 20 seconds, especially after being\n" +
-                "in a public place, or after blowing your nose,\n" +
-                "coughing or sneezing\n\n" +
-                "If soap and water are not readily available,\n" +
-                "use a hand sanitizer with at least 60%\n" +
-                "alcohol.Avoid touching your eyes, nose and\n" +
-                "mouth with unwashed hands.";
+        wearMasksSteps = "1. Wash your hands with soap and water\n" +
+                "for atleast 20 seconds. Dry your hands\n" +
+                "with a clean paper towel and throw the\n" +
+                "paper towel away.\n" +
+                "\n" +
+                "\n" +
+                "2. Cheak the mask for any defect such\n" +
+                "as tear or missing tie or ear loop. Throw\n" +
+                "away any that are defective.\n" +
+                "\n" +
+                "\n" +
+                "3. Make sure the exterior (usually yellow\n" +
+                "or blue) side of the mask is facing out,\n" +
+                "away from your face.\n" +
+                "\n" +
+                "\n" +
+                "4. Place the mask on your face with the\n" +
+                "blue side facing out and the stiff\n" +
+                "bendable edge at the top by your nose.\n" +
+                "\n" +
+                "\n" +
+                "5. If the mask has ear loop, put one loop\n" +
+                "around each ear.\n" +
+                "\n" +
+                "\n" +
+                "6. If the mask has ties, pick up the mask\n" +
+                "by the ties and tie upper ties behind\n" +
+                "your head with a bow.\n" +
+                "\n" +
+                "\n" +
+                "7. Once the mask is in place, use your\n" +
+                "index finger and thumb to pinch the\n" +
+                "bendable top edge of the mask around\n" +
+                "the bridge of your nose.\n" +
+                "\n" +
+                "\n" +
+                "8. If the mask has a lower tie, then once\n" +
+                "the mask is fitted to the bridge of your\n" +
+                "nose, tie the lower ties behind your head\n" +
+                "with a bow.\n" +
+                "\n" +
+                "\n" +
+                "9. Make sure the mask is completely secure.\n" +
+                "Make sure it covers your nose and mouth\n" +
+                "so that the bottom edge is under your chin.\n" +
+                "\n" +
+                "\n" +
+                "10. Wash your hands.\n";
 
-        socialDistancing = "Avoid close contact with people who are sick\n" +
-                "Some people without symptoms may be able\n" +
-                "to spread the virus Stay home as much as\n" +
-                "possible and avoid non - essential travel.\n\n" +
-                "Practice social distancing by keeping at least\n" +
-                "6 feet - about two arm lengths - away from\n" +
-                "others if you must go out in public.";
 
-        coverMouth = "Cover your mouth and nose with a cloth face\n" +
-                "cover when around others and when you\n" +
-                "must go out in public, such as to a grocery\n" +
-                "store. The cloth face cover is meant to\n" +
-                "protect other people in case you are infected.\n" +
-                "However, do NOT place cloth face coverings\n" +
-                "on young children under age 2, anyone who\n" +
-                "has trouble breathing, or is unconscious,\n" +
-                "incapacitated or otherwise unable to remove\n" +
-                "the mask without assistance In addition do\n" +
-                "NOT use a facemask meant for a health care worker\n\n" +
-                "Continue to keep about 6 feet between\n" +
-                "yourself and others. The cloth face cover is\n" +
-                "not a substitute for social distancing.";
 
-        disinfect = "This includes tables, doorknobs, light\n" +
-                "switches, countertops, handles, desks,\n" +
-                "phones, keyboards, toilets, faucets and \n" +
-                "sinks";
+        wearMasksTextView = findViewById(R.id. wearMasksSteps);
+        wearMasksTextView.setText(wearMasksSteps);
 
-        stayHomeStepstextView = (TextView) findViewById(R.id.stayHomeSteps);
-        stayHomeStepstextView.setText(stayHomeSteps);
 
-        handWashtextView = (TextView) findViewById(R.id.Handwash);
-        handWashtextView.setText(handWash);
 
-        socialDistancingtextView = (TextView) findViewById(R.id.socialDistancingSteps);
-        socialDistancingtextView.setText(socialDistancing);
 
-        coverMouthtextView = (TextView) findViewById(R.id.coverMouthSteps);
-        coverMouthtextView.setText(coverMouth);
 
-        disinfecttextView = (TextView) findViewById(R.id.disinfectSteps);
-        disinfecttextView.setText(disinfect);
+        removeMaskSteps = "1. Wash your hands before removing the\n" +
+                "mask.\n" +
+                "\n" +
+                "\n" +
+                "2. Do not touch the inside of the mask\n" +
+                "(the part over nose and mouth). It may be\n" +
+                "contaminated from your breathing, cough\n" +
+                "or sneezing.\n" +
+                "\n" +
+                "\n" +
+                "3. Unite or remove the ear loops and\n" +
+                "remove the mask by the straps. Throw\n" +
+                "the mask in the trash.\n" +
+                "\n" +
+                "\n" +
+                "4. Wash your hands properly.\n";
+
+
+
+
+
+
+        removeMaskTextView = findViewById(R.id.removeMasksSteps);
+        removeMaskTextView.setText(removeMaskSteps);
+
 
     }
 }
