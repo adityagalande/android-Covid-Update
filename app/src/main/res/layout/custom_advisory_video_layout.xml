@@ -28,8 +28,7 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/YT1"
             tools:text="@string/episode_1"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColor="@color/black" />
 
     </RelativeLayout>
 
