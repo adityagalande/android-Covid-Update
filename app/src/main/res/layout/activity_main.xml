@@ -82,11 +82,12 @@
                         android:textSize="25sp" />
 
                     <TextView
+                        android:id="@+id/casesMain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
-                        android:text="128,932,176"
+                        tools:text="128,932,176"
                         android:textColor="@color/grey"
                         android:textSize="40sp"
                         android:textStyle="bold" />
@@ -100,11 +101,12 @@
                         android:textSize="25sp" />
 
                     <TextView
+                        android:id="@+id/deathsMain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
-                        android:text="2,818,762"
+                        tools:text="2,818,762"
                         android:textColor="#F25022"
                         android:textSize="40sp"
                         android:textStyle="bold" />
@@ -118,11 +120,12 @@
                         android:textSize="25sp" />
 
                     <TextView
+                        android:id="@+id/recoveredMain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
-                        android:text="104,028,025"
+                        tools:text="104,028,025"
                         android:textColor="#8AC800"
                         android:textSize="40sp"
                         android:textStyle="bold" />
