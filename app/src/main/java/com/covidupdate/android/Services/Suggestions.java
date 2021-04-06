@@ -19,6 +19,7 @@ import java.util.Objects;
 
 public class Suggestions extends AppCompatActivity {
 
+    private Toast mToast;
     EditText name, emailSubject, emailMessage;
     RelativeLayout sendButton;
 
@@ -66,15 +67,21 @@ public class Suggestions extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Name : " + name.getText().toString().trim() + "\nSubject : " + subject + "\nMessage : " + message);
 
 
-
         try {
             if (subject.isEmpty() || message.isEmpty()) {
-                Toast.makeText(this, "Please fill all field", Toast.LENGTH_SHORT).show();
+
+                if (mToast != null) {
+                    mToast.cancel();
+                }
+
+                mToast = Toast.makeText(this, "Please fill all field", Toast.LENGTH_LONG);
+                mToast.show();
+
             } else {
                 startActivity(emailIntent);
             }
         } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
 
 
