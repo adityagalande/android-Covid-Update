@@ -3,7 +3,8 @@
     package="com.covidupdate.android">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,27 +13,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidUpdate">
-
-        <activity android:name=".Services.Disclaimer"
-            android:screenOrientation = "portrait"/>
-
-        <activity android:name=".Services.AboutUs"
-            android:screenOrientation = "portrait"/>
-
-        <activity android:name=".Services.Suggestions"
-            android:screenOrientation = "portrait"/>
-
-        <activity android:name=".Services.Precautions"
-            android:screenOrientation = "portrait"/>
-
-        <activity android:name=".Services.MaskTips"
-            android:screenOrientation = "portrait"/>
-
-        <activity android:name=".Services.Helpline"
-            android:screenOrientation = "portrait"/>
-
-        <activity android:name=".MainActivity"
-            android:screenOrientation = "portrait">
+        <activity android:name=".Services.AmericaCases"></activity>
+        <activity android:name=".Services.IndiaCases" />
+        <activity android:name=".Services.WorldWideCases" />
+        <activity
+            android:name=".Services.Disclaimer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Services.AboutUs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Services.Suggestions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Services.Precautions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Services.MaskTips"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Services.Helpline"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

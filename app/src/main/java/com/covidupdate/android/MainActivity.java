@@ -16,16 +16,21 @@ import android.os.SystemClock;
 import android.util.EventLog;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.covidupdate.android.Services.AboutUs;
+import com.covidupdate.android.Services.AmericaCases;
 import com.covidupdate.android.Services.Disclaimer;
 import com.covidupdate.android.Services.Helpline;
+import com.covidupdate.android.Services.IndiaCases;
 import com.covidupdate.android.Services.MaskTips;
 import com.covidupdate.android.Services.Precautions;
 import com.covidupdate.android.Services.Suggestions;
+import com.covidupdate.android.Services.WorldWideCases;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout rateusView;
     private RelativeLayout disclaimerView;
     private RelativeLayout aboutusView;
+    private RelativeLayout worldwidecasesView;
+    private RelativeLayout indiacasesView;
+    private RelativeLayout americaView;
+
+    private RelativeLayout actionBarMainScreenRelativeLayout;
+    private LinearLayout globalUpdateLinearLayout;
+    private ProgressBar mLoadingIndicator;
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -66,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (NullPointerException ignored) {
         }
 
+        globalUpdateLinearLayout = (LinearLayout) findViewById(R.id.globalUpdate);
+        mLoadingIndicator = (ProgressBar) findViewById(R.id.pb_loading_indicator);
+
+
         helpLineView = (RelativeLayout) findViewById(R.id.helpline_view);
         masktipsView = (RelativeLayout) findViewById(R.id.masktips_view);
         precautionsView = (RelativeLayout) findViewById(R.id.precautionary__view);
@@ -73,11 +89,62 @@ public class MainActivity extends AppCompatActivity {
         rateusView = (RelativeLayout) findViewById(R.id.rate_us_view);
         disclaimerView = (RelativeLayout) findViewById(R.id.disclaimer_view);
         aboutusView = (RelativeLayout) findViewById(R.id.about_us_view);
+        worldwidecasesView = (RelativeLayout) findViewById(R.id.worldWideCases);
+        indiacasesView = (RelativeLayout) findViewById(R.id.indiaCases);
+        americaView = (RelativeLayout) findViewById(R.id.americaCases);
+
+        actionBarMainScreenRelativeLayout = (RelativeLayout) findViewById(R.id.actionBarMainScreen);
         setOnClickListenerForButton();
 
         GlobalCasesAsyncTask globalCasesAsyncTask = new GlobalCasesAsyncTask();
         globalCasesAsyncTask.execute();
+
+        checkConnection();
+
+        showLoading();
+
+
     }
+
+    private void showLoading() {
+        /* Then, hide the weather data */
+        globalUpdateLinearLayout.setVisibility(View.INVISIBLE);
+        /* Finally, show the loading indicator */
+        mLoadingIndicator.setVisibility(View.VISIBLE);
+    }
+
+    private void showGlobalUpdateView() {
+        /* First, hide the loading indicator */
+        mLoadingIndicator.setVisibility(View.INVISIBLE);
+        /* Finally, make sure the weather data is visible */
+        globalUpdateLinearLayout.setVisibility(View.VISIBLE);
+    }
+
+
+
+    public void checkConnection(){
+        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+
+        if(activeNetwork != null) {
+
+        } else {
+            Toast.makeText(MainActivity.this, "Oops! Internet Connection Lost", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     private void setOnClickListenerForButton() {
@@ -137,6 +204,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(aboutus);
             }
         });
+
+        worldwidecasesView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent worldwidecases = new Intent(MainActivity.this, WorldWideCases.class);
+                startActivity(worldwidecases);
+            }
+        });
+
+        indiacasesView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent indiacases = new Intent(MainActivity.this, IndiaCases.class);
+                startActivity(indiacases);
+            }
+        });
+
+        americaView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent americacases = new Intent(MainActivity.this, AmericaCases.class);
+                startActivity(americacases);
+            }
+        });
     }
 
 
@@ -179,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
             if (event == null) {
                 return;
             } else {
+                showGlobalUpdateView();
                 updateUI(event);
             }
         }
