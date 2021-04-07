@@ -1,19 +1,13 @@
 package com.covidupdate.android;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.util.EventLog;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -59,14 +53,13 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout worldwidecasesView;
     private RelativeLayout indiacasesView;
     private RelativeLayout americaView;
-
-    private RelativeLayout actionBarMainScreenRelativeLayout;
     private LinearLayout globalUpdateLinearLayout;
     private ProgressBar mLoadingIndicator;
 
+    GlobalCasesAsyncTask globalCasesAsyncTask;
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
-
     private static final String Get_Global_Cases_URL = "https://disease.sh/v3/covid-19/all?yesterday=false&twoDaysAgo=false&allowNull=0";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,18 +86,31 @@ public class MainActivity extends AppCompatActivity {
         indiacasesView = (RelativeLayout) findViewById(R.id.indiaCases);
         americaView = (RelativeLayout) findViewById(R.id.americaCases);
 
-        actionBarMainScreenRelativeLayout = (RelativeLayout) findViewById(R.id.actionBarMainScreen);
+        RelativeLayout actionBarMainScreenRelativeLayout = (RelativeLayout) findViewById(R.id.refreshButton);
         setOnClickListenerForButton();
 
-        GlobalCasesAsyncTask globalCasesAsyncTask = new GlobalCasesAsyncTask();
+        globalCasesAsyncTask = new GlobalCasesAsyncTask();
         globalCasesAsyncTask.execute();
 
         checkConnection();
-
         showLoading();
 
-
+        actionBarMainScreenRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeGithubSearchQuery();
+            }
+        });
     }
+
+
+
+    private void makeGithubSearchQuery() {
+//        Toast.makeText(MainActivity.this, "Update data every 10 mins", Toast.LENGTH_SHORT).show();
+        URL queryUrl = createUrl(MainActivity.Get_Global_Cases_URL);
+        new GlobalCasesAsyncTask().execute(queryUrl);
+    }
+
 
     private void showLoading() {
         /* Then, hide the weather data */
@@ -112,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         /* Finally, show the loading indicator */
         mLoadingIndicator.setVisibility(View.VISIBLE);
     }
+
 
     private void showGlobalUpdateView() {
         /* First, hide the loading indicator */
@@ -121,30 +128,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    public void checkConnection(){
+    public void checkConnection() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
-
-        if(activeNetwork != null) {
-
+        if (activeNetwork != null) {
         } else {
             Toast.makeText(MainActivity.this, "Oops! Internet Connection Lost", Toast.LENGTH_LONG).show();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     private void setOnClickListenerForButton() {
@@ -321,6 +313,7 @@ public class MainActivity extends AppCompatActivity {
         return jsonResponse;
     }
 
+
     private String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder output = new StringBuilder();
         if (inputStream != null) {
@@ -353,4 +346,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
+
 }
