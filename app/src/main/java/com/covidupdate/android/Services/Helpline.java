@@ -3,7 +3,11 @@ package com.covidupdate.android.Services;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
@@ -41,7 +45,7 @@ public class Helpline extends AppCompatActivity {
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("11", "Gujarath", "104"));
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("12", "Haryana ", "8558893911"));
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("13", "Himachal Pradesh", "104"));
-        helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("14", "Jammu & Kashmir", "01912520982,\n0194-2440283"));
+        helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("14", "Jammu & Kashmir", "01912520982"));
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("15", "Jharkhand", "104"));
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("16", "Karnataka", "104"));
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("17", "Kerala", "0471-2552056"));
@@ -63,12 +67,23 @@ public class Helpline extends AppCompatActivity {
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("33", "Tripura ", "0381-2315879"));
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("34", "Uttarakhand", "104"));
         helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("35", "Uttar Pradesh", "18001805145"));
-        helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("36", "West Bengal", "1800313444222\n,03323412600"));
+        helplineContent.add(new com.covidupdate.android.HelplineAdapterClass.Helpline("36", "West Bengal", "1800313444222"));
 
 
         ListView listView = (ListView) findViewById(R.id.helplineListView);
         HelplineAdapter adapter = new HelplineAdapter(this, helplineContent);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                com.covidupdate.android.HelplineAdapterClass.Helpline helplineData = helplineContent.get(position);
+
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+helplineData.getHelpline_Number()));
+                startActivity(intent);
+            }
+        });
 
     }
 }
