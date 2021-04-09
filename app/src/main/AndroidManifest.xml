@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidUpdate">
-        <activity android:name=".Services.AmericaCases"></activity>
+        <activity android:name=".Services.AmericaCases" />
         <activity android:name=".Services.IndiaCases" />
         <activity android:name=".Services.WorldWideCases" />
         <activity
