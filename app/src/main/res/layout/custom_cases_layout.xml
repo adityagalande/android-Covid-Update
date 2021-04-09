@@ -7,6 +7,7 @@
     android:background="@color/black">
 
     <TextView
+        android:id="@+id/SR_NO"
         android:layout_width="40dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -16,6 +17,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/CountryName"
         android:layout_width="110dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -25,6 +27,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/totalCases"
         android:layout_width="85dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -34,6 +37,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/newCases"
         android:layout_width="70dp"
         android:layout_height="match_parent"
         android:layout_margin="0.01dp"
@@ -43,6 +47,7 @@
         tools:text="31,560" />
 
     <TextView
+        android:id="@+id/totalDeaths"
         android:layout_width="75dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -52,6 +57,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/newDeaths"
         android:layout_width="70dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -61,6 +67,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/totalRecovered"
         android:layout_width="85dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -70,6 +77,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/newRecovered"
         android:layout_width="80dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -79,6 +87,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/activeCases"
         android:layout_width="85dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -88,6 +97,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/seriousCases"
         android:layout_width="70dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -97,6 +107,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/totalTests"
         android:layout_width="94dp"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -106,6 +117,7 @@
         android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/population"
         android:layout_width="94dp"
         android:layout_height="match_parent"
         android:gravity="center"
