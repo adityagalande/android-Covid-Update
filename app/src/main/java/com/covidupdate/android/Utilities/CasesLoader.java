@@ -1,21 +1,17 @@
 package com.covidupdate.android.Utilities;
 
+import android.content.AsyncTaskLoader;
 import android.content.Context;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.loader.content.AsyncTaskLoader;
 
 import java.util.List;
 
 public class CasesLoader extends AsyncTaskLoader<List<CasesData>> {
 
-    private final String url;
+    private String url;
 
-    public CasesLoader(@NonNull Context context, String url) {
+    public CasesLoader(Context context, String url) {
         super(context);
         this.url = url;
-
     }
 
     @Override
@@ -23,7 +19,6 @@ public class CasesLoader extends AsyncTaskLoader<List<CasesData>> {
         forceLoad();
     }
 
-    @Nullable
     @Override
     public List<CasesData> loadInBackground() {
         if (url == null){

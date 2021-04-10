@@ -2,7 +2,7 @@ package com.covidupdate.android.Utilities;
 
 public class CasesData {
 
-    private final long SrNo;
+//    private final long SrNo;
     private final String countryName;
     private final String countryIMG;
     private final long totalCases;
@@ -16,8 +16,8 @@ public class CasesData {
     private final long totalTests;
     private final long population;
 
-    public CasesData(long srNo, String countryName, String countryIMG, long totalCases, long newCases, long totalDeaths, long newDeaths, long totalRecovered, long newRecovered, long activeCases, long seriousCases, long totalTests, long population) {
-        SrNo = srNo;
+    public CasesData(/*long srNo,*/ String countryName, String countryIMG, long totalCases, long newCases, long totalDeaths, long newDeaths, long totalRecovered, long newRecovered, long activeCases, long seriousCases, long totalTests, long population) {
+//        SrNo = srNo;
         this.countryName = countryName;
         this.countryIMG = countryIMG;
         this.totalCases = totalCases;
@@ -32,9 +32,9 @@ public class CasesData {
         this.population = population;
     }
 
-    public long getSrNo() {
-        return this.SrNo;
-    }
+//    public long getSrNo() {
+//        return this.SrNo;
+//    }
 
     public String getCountryName() {
         return this.countryName;
