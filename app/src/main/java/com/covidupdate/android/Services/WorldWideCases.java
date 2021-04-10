@@ -1,25 +1,29 @@
 package com.covidupdate.android.Services;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
 
+import android.app.LoaderManager;
+import android.content.Intent;
+import android.content.Loader;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.covidupdate.android.DetailCustomLayout;
 import com.covidupdate.android.R;
 import com.covidupdate.android.Utilities.CasesAdapter;
 import com.covidupdate.android.Utilities.CasesData;
+import com.covidupdate.android.Utilities.CasesLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class WorldWideCases extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<CasesData>> {
 
-    private static final String WORLDWIDECASES_JSON_RESPONSE = "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=false";
-    private CasesAdapter WorldWideCasesAdapter;
+    private static final String WORLDWIDECASES_JSON_RESPONSE = "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=0";
+    public CasesAdapter WorldWideCasesAdapter;
     private static final int WorldWide_LOADER_ID = 1;
 
     @Override
@@ -31,27 +35,39 @@ public class WorldWideCases extends AppCompatActivity implements LoaderManager.L
         WorldWideCasesAdapter = new CasesAdapter(this, new ArrayList<CasesData>());
         WorldWidelistView.setAdapter(WorldWideCasesAdapter);
 
-    }
+        WorldWidelistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CasesData casesData = (CasesData) (WorldWidelistView.getItemAtPosition(position));
+
+                Intent intent = new Intent(getApplicationContext(), DetailCustomLayout.class);
+                intent.putExtra("countryName", casesData.getCountryName());
+                startActivity(intent);
+            }
+        });
 
 
-
-
-
-
-
-    @NonNull
-    @Override
-    public Loader<List<CasesData>> onCreateLoader(int id, @Nullable Bundle args) {
-        return null;
-    }
-
-    @Override
-    public void onLoadFinished(@NonNull Loader<List<CasesData>> loader, List<CasesData> data) {
+        LoaderManager loaderManager = getLoaderManager();
+        loaderManager.initLoader(WorldWide_LOADER_ID, null, this);
 
     }
 
-    @Override
-    public void onLoaderReset(@NonNull Loader<List<CasesData>> loader) {
 
+    @Override
+    public Loader<List<CasesData>> onCreateLoader(int id, Bundle args) {
+        return new CasesLoader(this, WORLDWIDECASES_JSON_RESPONSE);
+    }
+
+    @Override
+    public void onLoadFinished(Loader<List<CasesData>> loader, List<CasesData> data) {
+        WorldWideCasesAdapter.clear();
+        if (data != null && !data.isEmpty()) {
+            WorldWideCasesAdapter.addAll(data);
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader<List<CasesData>> loader) {
+        WorldWideCasesAdapter.clear();
     }
 }

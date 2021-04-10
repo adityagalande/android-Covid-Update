@@ -1,6 +1,5 @@
 package com.covidupdate.android.Utilities;
 
-import android.annotation.SuppressLint;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -16,13 +15,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class QueryUtils {
+
     public static ArrayList<CasesData> fetchCasesData(String requestUrl) {
         URL url = createURL(requestUrl);
+
         String jsonResponse = null;
 
         try {
@@ -94,45 +93,44 @@ public class QueryUtils {
         return stringBuilderOutput.toString();
     }
 
-    private static ArrayList<CasesData> extractFromJson(String earthquakeJson) {
-        if (TextUtils.isEmpty(earthquakeJson)) {
+    private static ArrayList<CasesData> extractFromJson(String casesJson) {
+        if (TextUtils.isEmpty(casesJson)) {
             return null;
         }
 
-        ArrayList<CasesData> earthquakeData = new ArrayList<>();
+        ArrayList<CasesData> casesDataArrayListData = new ArrayList<>();
         try {
-            JSONObject baseJsonObject = new JSONObject(earthquakeJson);
-            JSONArray earthquakeArray = baseJsonObject.getJSONArray("features");
+//            JSONObject baseJsonObject = new JSONObject(casesJson);
+            JSONArray baseJsonObject = new JSONArray(casesJson);
+            for (int i = 0; i < baseJsonObject.length(); i++) {
+                JSONObject currentJsonObject = baseJsonObject.getJSONObject(i);
+                String countryName = currentJsonObject.getString("country");
+//                String flagIMG = currentJsonObject.getString("flag");
+                long totalCases = currentJsonObject.getLong("cases");
+                long newCases = currentJsonObject.getLong("todayCases");
+                long totalDeaths = currentJsonObject.getLong("deaths");
+                long newlDeaths = currentJsonObject.getLong("todayDeaths");
+                long totalRecovered = currentJsonObject.getLong("recovered");
+                long newRecovered = currentJsonObject.getLong("todayRecovered");
+                long activeCases = currentJsonObject.getLong("active");
+                long seriousCases = currentJsonObject.getLong("critical");
+                long totalTests = currentJsonObject.getLong("tests");
+                long population = currentJsonObject.getLong("population");
 
-            for (int i = 0; i < earthquakeArray.length(); i++) {
-                JSONObject currentJSONObject = earthquakeArray.getJSONObject(i);
-                JSONObject propertiesJSONObject = currentJSONObject.getJSONObject("properties");
-                double magnitude = propertiesJSONObject.getDouble("mag");
-                String location = propertiesJSONObject.getString(   "place");
-                long times = propertiesJSONObject.getLong("time");
+                JSONObject countryInfo = currentJsonObject.getJSONObject("countryInfo");
+                String flagImg = countryInfo.getString("flag");
 
-                String date = getDate(times, "dd/MMM/yyyy");
-                String time = getDate(times, "h:mm a");
-                String url = propertiesJSONObject.getString("url");
 
-                CasesData casesData = new CasesData();
-                earthquakeData.add(casesData);
+                CasesData casesData = new CasesData(countryName, flagImg, totalCases, newCases, totalDeaths, newlDeaths, totalRecovered, newRecovered, activeCases, seriousCases, totalTests, population);
+                casesDataArrayListData.add(casesData);
+
             }
-            return earthquakeData;
+
+            return casesDataArrayListData;
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return earthquakeData;
+        return casesDataArrayListData;
     }
 
-    public static String getDate(long milliSeconds, String dateFormat) {
-        // Create a DateFormatter object for displaying date in specified format.
-        @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
-
-        // Create a calendar object that will convert the date and time value in milliseconds to date.
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(milliSeconds);
-        return formatter.format(calendar.getTime());
-    }
 }
