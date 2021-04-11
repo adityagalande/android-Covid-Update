@@ -1,5 +1,6 @@
 package com.covidupdate.android.Services;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.LoaderManager;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.covidupdate.android.DetailCustomLayout;
 import com.covidupdate.android.R;
@@ -31,6 +33,10 @@ public class WorldWideCases extends AppCompatActivity implements LoaderManager.L
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_world_wide_cases);
 
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.worldwide_action_bar);
+
+
         ListView WorldWidelistView = (ListView) findViewById(R.id.WorldWideList);
         WorldWideCasesAdapter = new CasesAdapter(this, new ArrayList<CasesData>());
         WorldWidelistView.setAdapter(WorldWideCasesAdapter);
@@ -42,6 +48,13 @@ public class WorldWideCases extends AppCompatActivity implements LoaderManager.L
 
                 Intent intent = new Intent(getApplicationContext(), DetailCustomLayout.class);
                 intent.putExtra("countryName", casesData.getCountryName());
+                intent.putExtra("countryIMG", casesData.getCountryIMG());
+                intent.putExtra("totalCases", casesData.getTotalCases());
+                intent.putExtra("totalDeaths", casesData.getTotalDeaths());
+                intent.putExtra("totalRecovered", casesData.getTotalRecovered());
+                intent.putExtra("activeCases", casesData.getActiveCases());
+                intent.putExtra("seriousCases", casesData.getSeriousCases());
+
                 startActivity(intent);
             }
         });
@@ -70,4 +83,5 @@ public class WorldWideCases extends AppCompatActivity implements LoaderManager.L
     public void onLoaderReset(Loader<List<CasesData>> loader) {
         WorldWideCasesAdapter.clear();
     }
+
 }

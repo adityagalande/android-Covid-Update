@@ -67,7 +67,7 @@
                         android:text="@string/covid_19_daily_update"
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:textSize="23sp"
+                        android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <TextView

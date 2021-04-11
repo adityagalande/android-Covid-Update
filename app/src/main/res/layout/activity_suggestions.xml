@@ -60,6 +60,9 @@
                     android:maxLines="1"
                     android:minLines="1"
                     android:hint="@string/enter_name"
+                    android:textColorHint="#808080"
+                    android:backgroundTint="#808080"
+                    android:textColor="@color/black"
                     android:inputType="textPersonName"/>
 
                 <EditText
@@ -72,6 +75,9 @@
                     android:minLines="1"
                     android:autofillHints="Feedback of Covid Update application"
                     android:hint="@string/subject"
+                    android:textColor="@color/black"
+                    android:textColorHint="#808080"
+                    android:backgroundTint="#808080"
                     android:inputType="textEmailSubject"/>
 
                 <EditText
@@ -83,7 +89,10 @@
                     android:maxLines="10"
                     android:minLines="1"
                     android:scrollbars="vertical"
-                    android:hint="@string/compose_message"/>
+                    android:hint="@string/compose_message"
+                    android:textColorHint="#808080"
+                    android:textColor="@color/black"
+                    android:backgroundTint="#808080"/>
 
 
                 <RelativeLayout
@@ -99,7 +108,7 @@
                     android:layout_marginRight="80dp"
                     android:layout_marginBottom="30dp"
                     android:clickable="true"
-                    android:background="@drawable/card_design_2"
+                    android:background="@drawable/ripple_effect_suggestion"
                     android:elevation="5dp"
                     android:focusable="true">
 
