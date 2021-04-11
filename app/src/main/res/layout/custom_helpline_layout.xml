@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="3dp"
-        android:background="@drawable/card_design_1">
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/sr_no"
@@ -39,6 +39,7 @@
             android:layout_weight="1"
             android:gravity="start"
             android:padding="2dp"
+            android:textColor="@color/dark_grey"
             tools:text="1800313444222" />
 
     </LinearLayout>
