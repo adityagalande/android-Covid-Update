@@ -6,20 +6,9 @@
     android:orientation="horizontal"
     android:background="@drawable/ripple_effect_custom_case">
 
-<!--    <TextView-->
-<!--        android:id="@+id/SR_NO"-->
-<!--        android:layout_width="40dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:padding="5dp"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_margin="0.01dp"-->
-<!--        tools:text="100"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:background="@color/white"/>-->
-
     <TextView
-        android:id="@+id/CountryName"
-        android:layout_width="120dp"
+        android:id="@+id/stateName"
+        android:layout_width="135dp"
         android:layout_height="match_parent"
         android:padding="10dp"
         android:gravity="center"
@@ -96,19 +85,6 @@
         android:background="@color/white"/>
 
     <TextView
-        android:id="@+id/newRecovered"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:padding="5dp"
-        android:gravity="end|center_vertical"
-        android:layout_marginRight="0.01dp"
-        android:layout_marginLeft="0.01dp"
-        tools:text="24,122,221"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@color/white"/>
-
-    <TextView
         android:id="@+id/activeCases"
         android:layout_width="100dp"
         android:layout_height="match_parent"
@@ -117,19 +93,6 @@
         android:layout_marginRight="0.01dp"
         android:layout_marginLeft="0.01dp"
         tools:text="6,867,957"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@color/white"/>
-
-    <TextView
-        android:id="@+id/seriousCases"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:padding="5dp"
-        android:gravity="end|center_vertical"
-        android:layout_marginRight="0.01dp"
-        android:layout_marginLeft="0.01dp"
-        tools:text="6,867"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:background="@color/white"/>

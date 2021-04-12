@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:background="@drawable/ripple_effect_custom_case">
+
+    <TextView
+        android:id="@+id/StateNameIndia"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginRight="0.01dp"
+        android:layout_marginLeft="0.01dp"
+        tools:text="Dominican Republic"
+        android:textStyle="bold"
+        android:textColor="#1874CD"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/totalCasesIndia"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:gravity="end|center_vertical"
+        android:layout_marginRight="0.01dp"
+        android:layout_marginLeft="0.01dp"
+        tools:text="31,560,438"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/totalDeathsIndia"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:gravity="end|center_vertical"
+        android:layout_marginRight="0.01dp"
+        android:layout_marginLeft="0.01dp"
+        tools:text="319,560"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/totalRecoveredIndia"
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:gravity="end|center_vertical"
+        android:layout_marginRight="0.01dp"
+        android:layout_marginLeft="0.01dp"
+        tools:text="24,122,221"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/ActiveCasesIndia"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:gravity="end|center_vertical"
+        android:layout_marginRight="0.01dp"
+        android:layout_marginLeft="0.01dp"
+        tools:text="332,484,410"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/updatedDateIndia"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:gravity="end|center_vertical"
+        android:layout_marginRight="0.01dp"
+        android:layout_marginLeft="0.01dp"
+        tools:text="332,484,410"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@color/white"/>
+
+
+
+</LinearLayout>
