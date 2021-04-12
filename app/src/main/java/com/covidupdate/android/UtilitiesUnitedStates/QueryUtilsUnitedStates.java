@@ -1,7 +1,9 @@
-package com.covidupdate.android.UtilitiesIndia;
+package com.covidupdate.android.UtilitiesUnitedStates;
 
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.covidupdate.android.Utilities.CasesData;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,8 +19,10 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-public class QueryUtilsIndia {
-    public static ArrayList<CaseDataIndia> fetchCaseDataIndia(String requestUrl) {
+public class QueryUtilsUnitedStates {
+
+
+    public static ArrayList<CasesDataUnitedStates> fetchCasesData(String requestUrl) {
         URL url = createURL(requestUrl);
 
         String jsonResponse = null;
@@ -29,8 +33,8 @@ public class QueryUtilsIndia {
             e.printStackTrace();
         }
 
-        ArrayList<CaseDataIndia> caseDataIndias = extractFromJson(jsonResponse);
-        return caseDataIndias;
+        ArrayList<CasesDataUnitedStates> casesDataUnitedStates = extractFromJson(jsonResponse);
+        return casesDataUnitedStates;
     }
 
     private static URL createURL(String urls) {
@@ -92,43 +96,38 @@ public class QueryUtilsIndia {
         return stringBuilderOutput.toString();
     }
 
-    private static ArrayList<CaseDataIndia> extractFromJson(String casesJson) {
+    private static ArrayList<CasesDataUnitedStates> extractFromJson(String casesJson) {
         if (TextUtils.isEmpty(casesJson)) {
             return null;
         }
 
-        ArrayList<CaseDataIndia> CaseDataIndiaArrayListData = new ArrayList<>();
+        ArrayList<CasesDataUnitedStates> casesDataUnitedStatesArrayListData = new ArrayList<>();
         try {
-
             JSONArray baseJsonObject = new JSONArray(casesJson);
             for (int i = 0; i < baseJsonObject.length(); i++) {
                 JSONObject currentJsonObject = baseJsonObject.getJSONObject(i);
-                String countryName = currentJsonObject.getString("country");
+                String stateName = currentJsonObject.getString("state");
+                long totalCases = currentJsonObject.getLong("cases");
+                long newCases = currentJsonObject.getLong("todayCases");
+                long totalDeaths = currentJsonObject.getLong("deaths");
+                long newlDeaths = currentJsonObject.getLong("todayDeaths");
+                long totalRecovered = currentJsonObject.getLong("recovered");
+                long activeCases = currentJsonObject.getLong("active");
+                long totalTests = currentJsonObject.getLong("tests");
+                long population = currentJsonObject.getLong("population");
 
 
-                if (countryName.equals("India")) {
-                    String updatedAt = currentJsonObject.getString("updatedAt");
-                    String state = currentJsonObject.getString("province");
-
-                    JSONObject statsObject = currentJsonObject.getJSONObject("stats");
-                    long totalCases = statsObject.getLong("confirmed");
-                    long totalDeaths = statsObject.getLong("deaths");
-                    long totalRecovered = statsObject.getLong("recovered");
-
-                    if (!state.equals("Unknown")) {
-
-                        CaseDataIndia caseDataIndia = new CaseDataIndia(countryName, state, totalCases, totalDeaths, totalRecovered, updatedAt);
-                        CaseDataIndiaArrayListData.add(caseDataIndia);
-                    }
-                }
+                CasesDataUnitedStates casesDataUnitedStates = new CasesDataUnitedStates(stateName, totalCases, newCases, totalDeaths, newlDeaths, totalRecovered, activeCases, totalTests, population);
+                casesDataUnitedStatesArrayListData.add(casesDataUnitedStates);
 
             }
 
-            return CaseDataIndiaArrayListData;
+            return casesDataUnitedStatesArrayListData;
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return CaseDataIndiaArrayListData;
+        return casesDataUnitedStatesArrayListData;
     }
 
 }
+

@@ -40,6 +40,8 @@ import java.nio.charset.Charset;
 import java.text.DecimalFormat;
 import java.util.Objects;
 
+import hotchemi.android.rate.AppRate;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -71,6 +73,17 @@ public class MainActivity extends AppCompatActivity {
         } catch (NullPointerException ignored) {
         }
 
+        //App Ratings
+        AppRate.with(this)
+                .setInstallDays(1)
+                .setLaunchTimes(3)
+                .setRemindInterval(1)
+                .monitor();
+        AppRate.showRateDialogIfMeetsConditions(this);
+
+
+
+
         globalUpdateLinearLayout = (LinearLayout) findViewById(R.id.globalUpdate);
         mLoadingIndicator = (ProgressBar) findViewById(R.id.pb_loading_indicator);
 
@@ -98,19 +111,21 @@ public class MainActivity extends AppCompatActivity {
         actionBarMainScreenRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeGithubSearchQuery();
+
+                try {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("text/plain");
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Covid Update");
+                    String shareMSG = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+                    intent.putExtra(Intent.EXTRA_TEXT,shareMSG);
+                    startActivity(Intent.createChooser(intent, "share by"));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this,"Error Occurred!",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
-
-
-
-    private void makeGithubSearchQuery() {
-//        Toast.makeText(MainActivity.this, "Update data every 10 mins", Toast.LENGTH_SHORT).show();
-        URL queryUrl = createUrl(MainActivity.Get_Global_Cases_URL);
-        new GlobalCasesAsyncTask().execute(queryUrl);
-    }
-
 
     private void showLoading() {
         /* Then, hide the weather data */

@@ -100,12 +100,10 @@ public class QueryUtils {
 
         ArrayList<CasesData> casesDataArrayListData = new ArrayList<>();
         try {
-//            JSONObject baseJsonObject = new JSONObject(casesJson);
             JSONArray baseJsonObject = new JSONArray(casesJson);
             for (int i = 0; i < baseJsonObject.length(); i++) {
                 JSONObject currentJsonObject = baseJsonObject.getJSONObject(i);
                 String countryName = currentJsonObject.getString("country");
-//                String flagIMG = currentJsonObject.getString("flag");
                 long totalCases = currentJsonObject.getLong("cases");
                 long newCases = currentJsonObject.getLong("todayCases");
                 long totalDeaths = currentJsonObject.getLong("deaths");
