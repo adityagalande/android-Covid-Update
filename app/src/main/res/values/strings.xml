@@ -21,4 +21,6 @@
     <string name="enter_name">Enter Name</string>
     <string name="send_us_your_suggestion_title">Send us your suggestion !</string>
     <string name="send_button">SEND</string>
+    <string name="appTitleName">COVID UPDATE</string>
+    <string name="developedBy">Powered By Aditya Galande</string>
 </resources>

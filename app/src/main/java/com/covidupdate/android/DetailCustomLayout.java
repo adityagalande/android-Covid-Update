@@ -11,6 +11,12 @@ import android.widget.TextView;
 import com.covidupdate.android.Services.WorldWideCases;
 import com.covidupdate.android.Utilities.CasesAdapter;
 import com.covidupdate.android.Utilities.CasesData;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
@@ -18,7 +24,8 @@ import java.util.Objects;
 
 public class DetailCustomLayout extends AppCompatActivity {
 
-    CasesData casesData;
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +35,24 @@ public class DetailCustomLayout extends AppCompatActivity {
             Objects.requireNonNull(this.getSupportActionBar()).hide();
         } catch (NullPointerException ignored) {
         }
+
+
+        //Ad Mob code
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-9365499454983010/9733226421");
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
 
         DecimalFormat formatter = new DecimalFormat("#,###");

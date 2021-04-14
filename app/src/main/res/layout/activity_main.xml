@@ -38,11 +38,11 @@
                     android:id="@+id/refreshButton"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:layout_margin="4dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_margin="4dp"
                     android:background="@drawable/ripple_effect_card_design_1"
-                    android:elevation="2dp"
                     android:clickable="true"
+                    android:elevation="2dp"
                     android:focusable="true">
 
                     <ImageView
@@ -57,26 +57,26 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_gravity="center_vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/covid_19_daily_update"
                         android:layout_gravity="center_horizontal"
+                        android:text="@string/covid_19_daily_update"
                         android:textColor="@color/black"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:text="(Cases updated every 10 minutes)"
                         android:textColor="@color/black"
                         android:textSize="10sp"
-                        android:layout_gravity="center_horizontal"
                         tools:ignore="SmallSp" />
 
                 </LinearLayout>
@@ -93,71 +93,121 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:id="@+id/globalUpdate"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content">
 
-                        <TextView
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/offline_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="invisible"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/offline_astronaut"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/offline_astronaut"/>
+
+                            <TextView
+                                android:id="@+id/empty_title_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/offline_astronaut"
+                                android:layout_centerHorizontal="true"
+                                android:fontFamily="sans-serif-medium"
+                                android:paddingTop="0dp"
+                                android:text="Connect to the internet"
+                                android:textColor="@color/black"
+                                android:textAppearance="?android:textAppearanceMedium"/>
+
+                            <TextView
+                                android:id="@+id/empty_subtitle_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/empty_title_text"
+                                android:layout_centerHorizontal="true"
+                                android:fontFamily="sans-serif"
+                                android:paddingTop="4dp"
+                                android:text="Check your connection and restart."
+                                android:textAppearance="?android:textAppearanceSmall"
+                                android:textColor="#A2AAB0"/>
+                        </RelativeLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/globalUpdate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Coronavirus Cases:"
-                            android:textColor="@color/dark_grey"
-                            android:textSize="25sp" />
+                            android:background="@color/white"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/casesMain"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:gravity="center"
-                            android:textColor="@color/grey"
-                            android:textSize="40sp"
-                            android:textStyle="bold"
-                            tools:text="128,932,176" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Coronavirus Cases:"
+                                android:textColor="@color/dark_grey"
+                                android:textSize="25sp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Deaths:"
-                            android:textColor="@color/black"
-                            android:textSize="25sp" />
+                            <TextView
+                                android:id="@+id/casesMain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:textColor="@color/grey"
+                                android:textSize="40sp"
+                                android:textStyle="bold"
+                                tools:text="128,932,176" />
 
-                        <TextView
-                            android:id="@+id/deathsMain"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:gravity="center"
-                            android:textColor="#F25022"
-                            android:textSize="40sp"
-                            android:textStyle="bold"
-                            tools:text="2,818,762" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Deaths:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Recovered:"
-                            android:textColor="@color/black"
-                            android:textSize="25sp" />
+                            <TextView
+                                android:id="@+id/deathsMain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:textColor="#F25022"
+                                android:textSize="40sp"
+                                android:textStyle="bold"
+                                tools:text="2,818,762" />
 
-                        <TextView
-                            android:id="@+id/recoveredMain"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:gravity="center"
-                            android:textColor="#8AC800"
-                            android:textSize="40sp"
-                            android:textStyle="bold"
-                            tools:text="104,028,025" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Recovered:"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
 
-                    </LinearLayout>
+                            <TextView
+                                android:id="@+id/recoveredMain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:gravity="center"
+                                android:textColor="#8AC800"
+                                android:textSize="40sp"
+                                android:textStyle="bold"
+                                tools:text="104,028,025" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
 
                     <ProgressBar
                         android:id="@+id/pb_loading_indicator"
