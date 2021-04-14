@@ -36,12 +36,9 @@
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-black"
                     android:shadowColor="#67587686"
-                    android:shadowDx="10"
-                    android:shadowDy="10"
-                    android:shadowRadius="5"
                     android:text="STAY HOME SAVE LIVES"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -56,6 +53,8 @@
                     android:layout_marginBottom="4dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
+                    android:padding="20dp"
+                    android:gravity="start"
                     tools:text="1. Stay Home" />
 
                 <ImageView
@@ -86,12 +85,9 @@
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-black"
                     android:shadowColor="#67587686"
-                    android:shadowDx="10"
-                    android:shadowDy="10"
-                    android:shadowRadius="5"
                     android:text="WASH HANDS OFTEN"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -106,6 +102,8 @@
                     android:layout_marginBottom="4dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
+                    android:gravity="start"
+                    android:padding="20dp"
                     tools:text="1. Stay Home" />
 
                 <ImageView
@@ -134,15 +132,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_margin="10dp"
+                    android:layout_margin="15dp"
                     android:fontFamily="sans-serif-black"
                     android:shadowColor="#67587686"
-                    android:shadowDx="10"
-                    android:shadowDy="10"
-                    android:shadowRadius="5"
                     android:text="AVOID SOCIAL CONTACT"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -155,6 +150,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="4dp"
+                    android:padding="20dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     tools:text="1. Stay Home" />
@@ -187,12 +183,9 @@
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-black"
                     android:shadowColor="#67587686"
-                    android:shadowDx="10"
-                    android:shadowDy="10"
-                    android:shadowRadius="5"
                     android:text="COVER MOUTH AND NOSE"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -207,6 +200,7 @@
                     android:layout_marginBottom="4dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
+                    android:padding="20dp"
                     tools:text="1. Stay Home" />
 
                 <ImageView
@@ -238,12 +232,9 @@
                     android:fontFamily="sans-serif-black"
                     android:gravity="center_horizontal"
                     android:shadowColor="#67587686"
-                    android:shadowDx="10"
-                    android:shadowDy="10"
-                    android:shadowRadius="5"
                     android:text="CLEAN AND DISINFECT FREQUENTLY TOUCHED SURFACES DAILY"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -258,6 +249,7 @@
                     android:layout_marginBottom="4dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
+                    android:padding="20dp"
                     tools:text="1. Stay Home" />
 
                 <ImageView

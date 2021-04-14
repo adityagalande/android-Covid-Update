@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ import com.covidupdate.android.Services.MaskTips;
 import com.covidupdate.android.Services.Precautions;
 import com.covidupdate.android.Services.Suggestions;
 import com.covidupdate.android.Services.WorldWideCases;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,7 +46,6 @@ import hotchemi.android.rate.AppRate;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private RelativeLayout helpLineView;
     private RelativeLayout masktipsView;
     private RelativeLayout precautionsView;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout americaView;
     private LinearLayout globalUpdateLinearLayout;
     private ProgressBar mLoadingIndicator;
+    private RelativeLayout offlineViewRelativeLayout;
 
     GlobalCasesAsyncTask globalCasesAsyncTask;
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
         globalUpdateLinearLayout = (LinearLayout) findViewById(R.id.globalUpdate);
         mLoadingIndicator = (ProgressBar) findViewById(R.id.pb_loading_indicator);
+        offlineViewRelativeLayout = (RelativeLayout) findViewById(R.id.offline_view);
 
 
         helpLineView = (RelativeLayout) findViewById(R.id.helpline_view);
@@ -149,7 +152,10 @@ public class MainActivity extends AppCompatActivity {
         NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
         if (activeNetwork != null) {
         } else {
-            Toast.makeText(MainActivity.this, "Oops! Internet Connection Lost", Toast.LENGTH_LONG).show();
+            mLoadingIndicator.setVisibility(View.INVISIBLE);
+            globalUpdateLinearLayout.setVisibility(View.INVISIBLE);
+            offlineViewRelativeLayout.setVisibility(View.VISIBLE);
+//            Toast.makeText(MainActivity.this, "Oops! Internet Connection Lost", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -191,7 +197,15 @@ public class MainActivity extends AppCompatActivity {
         rateusView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Feature Coming Soon!!", Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse("https://play.google.com/store/apps/details?id="+getApplicationContext().getPackageName());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "Error Occurred!", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });

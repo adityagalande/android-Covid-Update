@@ -9,40 +9,39 @@
     <ImageView
         android:layout_width="320dp"
         android:layout_height="320dp"
-        android:src="@drawable/splashscreen"
+        android:layout_centerInParent="true"
         android:layout_marginTop="150dp"
-        android:layout_centerInParent="true"/>
+        android:src="@drawable/splashscreen" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/poweredBy"
+        android:layout_centerHorizontal="true"
         android:layout_marginEnd="-3dp"
-        android:fontFamily="@font/archivo_black_regular"
-        android:text="COVID UPDATE"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/black_hansans_regular"
+        android:gravity="center_horizontal"
+        android:shadowColor="#67587686"
+        android:shadowDx="6"
+        android:shadowDy="6"
+        android:shadowRadius="5"
+        android:text="@string/appTitleName"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:shadowColor="#67587686"
-        android:shadowDx="10"
-        android:shadowDy="10"
-        android:shadowRadius="5"
-        android:gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:layout_above="@+id/poweredBy"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/poweredBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Powered By Aditya Galande"
-        android:textColor="#808080"
-        android:textSize="12sp"
-        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
-        android:layout_alignParentBottom="true"/>
-
+        android:gravity="center_horizontal"
+        android:text="@string/developedBy"
+        android:textColor="#808080"
+        android:textSize="12sp" />
 
 
 </RelativeLayout>

@@ -18,15 +18,26 @@ import com.covidupdate.android.R;
 import com.covidupdate.android.Utilities.CasesAdapter;
 import com.covidupdate.android.Utilities.CasesData;
 import com.covidupdate.android.Utilities.CasesLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class WorldWideCases extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<CasesData>> {
 
+    //Banner Ad
+    private AdView mAdView;
+
     private static final String WORLDWIDECASES_JSON_RESPONSE = "https://disease.sh/v3/covid-19/countries?yesterday=false&twoDaysAgo=false&sort=cases&allowNull=0";
     public CasesAdapter WorldWideCasesAdapter;
     private static final int WorldWide_LOADER_ID = 1;
+    private ProgressBar mLoadingIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +47,24 @@ public class WorldWideCases extends AppCompatActivity implements LoaderManager.L
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.worldwide_action_bar);
 
+        //Ad Mob code
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-9365499454983010/9733226421");
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        mLoadingIndicator = (ProgressBar) findViewById(R.id.pb_loading_indicator);
 
         ListView WorldWidelistView = (ListView) findViewById(R.id.WorldWideList);
         WorldWideCasesAdapter = new CasesAdapter(this, new ArrayList<CasesData>());
@@ -77,6 +106,7 @@ public class WorldWideCases extends AppCompatActivity implements LoaderManager.L
         if (data != null && !data.isEmpty()) {
             WorldWideCasesAdapter.addAll(data);
         }
+        mLoadingIndicator.setVisibility(View.INVISIBLE);
     }
 
     @Override

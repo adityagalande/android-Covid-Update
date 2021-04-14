@@ -15,11 +15,18 @@ import com.covidupdate.android.AdvisoryAdapterClass.Advisory;
 import com.covidupdate.android.AdvisoryAdapterClass.AdvisoryAdapter;
 import com.covidupdate.android.HelplineAdapterClass.HelplineAdapter;
 import com.covidupdate.android.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.util.ArrayList;
 
 public class Helpline extends AppCompatActivity {
 
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +35,24 @@ public class Helpline extends AppCompatActivity {
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.helpline_action_bar);
+
+        //Ad Mob code
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-9365499454983010/9733226421");
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
 
 
         final ArrayList<com.covidupdate.android.HelplineAdapterClass.Helpline> helplineContent = new ArrayList<>();

@@ -2,11 +2,15 @@ package com.covidupdate.android.Utilities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.covidupdate.android.R;
 
@@ -18,6 +22,7 @@ public class CasesAdapter extends ArrayAdapter {
     public CasesAdapter(Context context, List<CasesData> casesData) {
         super(context, 0, casesData);
     }
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -32,8 +37,6 @@ public class CasesAdapter extends ArrayAdapter {
 
 
         DecimalFormat formatter = new DecimalFormat("#,###");
-//        TextView SrNoTextView = listView.findViewById(R.id.sr_no);
-//        SrNoTextView.setText(String.valueOf(itemPosition.getSrNo()));
 
         TextView countryNameTextView = listView.findViewById(R.id.CountryName);
         countryNameTextView.setText(itemPosition.getCountryName());
@@ -100,7 +103,7 @@ public class CasesAdapter extends ArrayAdapter {
             populationTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getPopulation()))));
         }
 
-
         return listView;
     }
+
 }

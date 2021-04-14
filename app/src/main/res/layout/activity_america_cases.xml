@@ -123,33 +123,43 @@
 
             </LinearLayout>
 
-            <FrameLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ListView
-                    android:id="@+id/UnitedStatesList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp" />
+                android:layout_height="match_parent">
 
                 <ProgressBar
                     android:id="@+id/pb_loading_indicator"
                     android:layout_width="42dp"
-                    android:layout_height="47dp"
-                    android:layout_gravity="start|center_vertical"
-                    android:layout_marginStart="190dp"
-                    android:visibility="invisible" />
+                    android:layout_height="42dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_margin="180dp"
+                    android:visibility="visible" />
 
-            </FrameLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ListView
+                        android:id="@+id/UnitedStatesList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
     </HorizontalScrollView>
 
-    <RelativeLayout
-        android:layout_width="400dp"
-        android:layout_height="60dp"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@color/yellow" />
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-9365499454983010/9733226421" />
+
 </LinearLayout>

@@ -45,7 +45,7 @@ public class Suggestions extends AppCompatActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String recipient = "adityagalande14@gmail.com".trim();
+                String recipient = "feedbacks.helpline@gmail.com".trim();
                 String subject = emailSubject.getText().toString().trim();
                 String message = emailMessage.getText().toString().trim();
 
