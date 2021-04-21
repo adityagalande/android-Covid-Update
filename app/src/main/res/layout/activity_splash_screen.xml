@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="-3dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/black_hansans_regular"
+        android:fontFamily="@font/archivo_black_regular"
         android:gravity="center_horizontal"
         android:shadowColor="#67587686"
         android:shadowDx="6"
@@ -28,8 +28,8 @@
         android:shadowRadius="5"
         android:text="@string/appTitleName"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="31sp"
+        android:textStyle="normal|italic" />
 
     <TextView
         android:id="@+id/poweredBy"
