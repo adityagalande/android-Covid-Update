@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.UtilitiesIndia;
+package com.daily_cases_report.android.UtilitiesIndia;
 
 import android.text.TextUtils;
 import android.util.Log;

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
@@ -13,7 +12,6 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.squareup.picasso.Picasso;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
@@ -21,7 +19,7 @@ import org.eazegraph.lib.models.PieModel;
 import java.text.DecimalFormat;
 import java.util.Objects;
 
-public class DetailCustomLayout extends AppCompatActivity {
+public class DetailCustomIndiaLayout extends AppCompatActivity {
 
     private AdView mAdView;
     private PieChart pieChart;
@@ -29,7 +27,7 @@ public class DetailCustomLayout extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_custom_layout);
+        setContentView(R.layout.activity_detail_custom_india_layout);
 
         try {
             Objects.requireNonNull(this.getSupportActionBar()).hide();
@@ -54,50 +52,38 @@ public class DetailCustomLayout extends AppCompatActivity {
         mAdView.loadAd(adRequest);
 
 
-        pieChart = findViewById(R.id.piechartWorldWide);
+        pieChart = findViewById(R.id.piechartIndia);
+
+
 
         DecimalFormat formatter = new DecimalFormat("#,###");
 
-        String countryName = getIntent().getStringExtra("countryName");
-        String countryIMG = getIntent().getStringExtra("countryIMG");
-        long totalCases = getIntent().getLongExtra("totalCases",0);
+        String countryName = getIntent().getStringExtra("provinceName");
+        long totalCases = getIntent().getLongExtra("confirmedCases",0);
         long totalDeaths = getIntent().getLongExtra("totalDeaths", 0);
         long totalRecovered = getIntent().getLongExtra("totalRecovered",0);
         long activeCases = getIntent().getLongExtra("activeCases",0);
-        long seriousCases = getIntent().getLongExtra("seriousCases",0);
 
 
-        TextView countryTextView = findViewById(R.id.country_name);
+        TextView countryTextView = findViewById(R.id.ind_state_name);
         countryTextView.setText(countryName);
 
-        ImageView imageView = findViewById(R.id.country_flag);
-        Picasso.with(this).load(countryIMG).into(imageView);
-
-        TextView casesDetailTextView = findViewById(R.id.cases_detail);
+        TextView casesDetailTextView = findViewById(R.id.cases_detail_ind);
         casesDetailTextView.setText(formatter.format(Double.parseDouble(String.valueOf(totalCases))));
 
-        TextView deathsDetailTextView = findViewById(R.id.deaths_detail);
+        TextView deathsDetailTextView = findViewById(R.id.deaths_detail_ind);
         deathsDetailTextView.setText(formatter.format(Double.parseDouble(String.valueOf(totalDeaths))));
 
-        TextView recoveredDetailTextView = findViewById(R.id.recovered_detail);
+        TextView recoveredDetailTextView = findViewById(R.id.recovered_detail_ind);
         recoveredDetailTextView.setText(formatter.format(Double.parseDouble(String.valueOf(totalRecovered))));
 
-        TextView currentlyInfectedTextView = findViewById(R.id.currently_infected);
-        currentlyInfectedTextView.setText(formatter.format(Double.parseDouble(String.valueOf(activeCases))));
-
-        TextView seriousCriticalTextView = findViewById(R.id.serious_critical);
-        seriousCriticalTextView.setText(formatter.format(Double.parseDouble(String.valueOf(seriousCases))));
-
-        TextView mildConditionTextView = findViewById(R.id.mild_condition);
-        mildConditionTextView.setText(formatter.format(Double.parseDouble(String.valueOf(activeCases - seriousCases))));
-
-        TextView dischargedTextView = findViewById(R.id.discharged);
+        TextView dischargedTextView = findViewById(R.id.discharged_ind);
         dischargedTextView.setText(formatter.format(Double.parseDouble(String.valueOf(totalRecovered))));
 
-        TextView deathsTextView = findViewById(R.id.deaths);
+        TextView deathsTextView = findViewById(R.id.deaths_ind);
         deathsTextView.setText(formatter.format(Double.parseDouble(String.valueOf(totalDeaths))));
 
-        TextView casesOutcomeTextView = findViewById(R.id.cases_outcome);
+        TextView casesOutcomeTextView = findViewById(R.id.cases_outcome_ind);
         casesOutcomeTextView.setText(formatter.format(Double.parseDouble(String.valueOf(totalRecovered + totalDeaths))));
 
 
@@ -106,6 +92,7 @@ public class DetailCustomLayout extends AppCompatActivity {
         pieChart.addPieSlice(new PieModel("Deaths",Integer.parseInt(String.valueOf(totalDeaths)), Color.parseColor("#EF5350")));
         pieChart.addPieSlice(new PieModel("Active",Integer.parseInt(String.valueOf(activeCases)), Color.parseColor("#29B6F6")));
         pieChart.startAnimation();
+
 
     }
 }

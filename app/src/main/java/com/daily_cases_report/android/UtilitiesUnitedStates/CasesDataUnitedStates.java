@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.UtilitiesUnitedStates;
+package com.daily_cases_report.android.UtilitiesUnitedStates;
 
 public class CasesDataUnitedStates {
 

@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android;
+package com.daily_cases_report.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,15 +17,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daily_update_of_covid_cases.android.Services.AboutUs;
-import com.daily_update_of_covid_cases.android.Services.AmericaCases;
-import com.daily_update_of_covid_cases.android.Services.Advisory;
-import com.daily_update_of_covid_cases.android.Services.Helpline;
-import com.daily_update_of_covid_cases.android.Services.IndiaCases;
-import com.daily_update_of_covid_cases.android.Services.MaskTips;
-import com.daily_update_of_covid_cases.android.Services.Precautions;
-import com.daily_update_of_covid_cases.android.Services.Suggestions;
-import com.daily_update_of_covid_cases.android.Services.WorldWideCases;
+import com.daily_cases_report.android.Services.AboutUs;
+import com.daily_cases_report.android.Services.AmericaCases;
+import com.daily_cases_report.android.Services.Advisory;
+import com.daily_cases_report.android.Services.Helpline;
+import com.daily_cases_report.android.Services.IndiaCases;
+import com.daily_cases_report.android.Services.MaskTips;
+import com.daily_cases_report.android.Services.Precautions;
+import com.daily_cases_report.android.Services.Suggestions;
+import com.daily_cases_report.android.Services.WorldWideCases;
 
 import org.json.JSONException;
 import org.json.JSONObject;

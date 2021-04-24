@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.AdvisoryAdapterClass;
+package com.daily_cases_report.android.AdvisoryAdapterClass;
 
 public class Advisory {
 

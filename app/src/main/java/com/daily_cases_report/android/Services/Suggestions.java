@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.Services;
+package com.daily_cases_report.android.Services;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daily_update_of_covid_cases.android.R;
+import com.daily_cases_report.android.R;
 
 public class Suggestions extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.AdvisoryAdapterClass;
+package com.daily_cases_report.android.AdvisoryAdapterClass;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.daily_update_of_covid_cases.android.R;
+import com.daily_cases_report.android.R;
 
 import java.util.ArrayList;
 

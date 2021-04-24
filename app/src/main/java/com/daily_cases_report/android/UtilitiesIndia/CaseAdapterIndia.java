@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.UtilitiesIndia;
+package com.daily_cases_report.android.UtilitiesIndia;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.daily_update_of_covid_cases.android.R;
+import com.daily_cases_report.android.R;
 
 import java.text.DecimalFormat;
 import java.util.List;

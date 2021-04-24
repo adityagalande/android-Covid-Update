@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.ImageAdapter;
+package com.daily_cases_report.android.ImageAdapter;
 
 import android.content.Context;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.daily_update_of_covid_cases.android.R;
+import com.daily_cases_report.android.R;
 
 public class ImageViewAdapter extends PagerAdapter {
 

@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.Services;
+package com.daily_cases_report.android.Services;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +12,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
-import com.daily_update_of_covid_cases.android.DetailCustomLayout;
-import com.daily_update_of_covid_cases.android.DetailCustomUsaLayout;
-import com.daily_update_of_covid_cases.android.R;
-import com.daily_update_of_covid_cases.android.Utilities.CasesData;
-import com.daily_update_of_covid_cases.android.UtilitiesUnitedStates.CaseAdapterUnitedStates;
-import com.daily_update_of_covid_cases.android.UtilitiesUnitedStates.CaseLoaderUnitedStates;
-import com.daily_update_of_covid_cases.android.UtilitiesUnitedStates.CasesDataUnitedStates;
+import com.daily_cases_report.android.DetailCustomUsaLayout;
+import com.daily_cases_report.android.R;
+import com.daily_cases_report.android.UtilitiesUnitedStates.CaseAdapterUnitedStates;
+import com.daily_cases_report.android.UtilitiesUnitedStates.CaseLoaderUnitedStates;
+import com.daily_cases_report.android.UtilitiesUnitedStates.CasesDataUnitedStates;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -48,7 +46,7 @@ public class AmericaCases extends AppCompatActivity implements LoaderManager.Loa
         //Ad Mob code
         AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-9365499454983010/6857072643");
+        adView.setAdUnitId("ca-app-pub-9365499454983010/8516642823");
 
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {

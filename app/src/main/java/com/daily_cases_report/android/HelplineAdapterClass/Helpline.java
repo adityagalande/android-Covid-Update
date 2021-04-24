@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.HelplineAdapterClass;
+package com.daily_cases_report.android.HelplineAdapterClass;
 
 public class Helpline {
 

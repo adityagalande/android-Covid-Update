@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android.Services;
+package com.daily_cases_report.android.Services;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.daily_update_of_covid_cases.android.R;
+import com.daily_cases_report.android.R;
 
 public class MaskTips extends AppCompatActivity {
 

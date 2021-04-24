@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android;
+package com.daily_cases_report.android;
 
 public class Event {
     public final long cases, deaths, recovered;
