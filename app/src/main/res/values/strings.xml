@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Covid Update</string>
+    <string name="app_name">Daily Cases Report</string>
     <string name="covid_19_daily_update">COVID-19 (Daily Update)</string>
     <string name="episode_2">Episode #2 - SARS-CoV-2</string>
     <string name="episode_1">Episode #1 - Herd immunity</string>
@@ -18,7 +18,7 @@
     <string name="send">SEND</string>
     <string name="compose_message">Compose Message</string>
     <string name="subject">Subject</string>
-    <string name="enter_name">Enter Name</string>
+    <string name="enter_name">Enter Name (optional)</string>
     <string name="send_us_your_suggestion_title">Send us your suggestion !</string>
     <string name="send_button">SEND</string>
     <string name="appTitleName">COVID UPDATE</string>
