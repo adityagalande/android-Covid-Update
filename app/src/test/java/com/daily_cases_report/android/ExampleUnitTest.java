@@ -1,4 +1,4 @@
-package com.daily_update_of_covid_cases.android;
+package com.daily_cases_report.android;
 
 import org.junit.Test;
 
