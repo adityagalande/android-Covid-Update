@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
-                    intent.putExtra(Intent.EXTRA_SUBJECT, "Daily Cases Report");
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Daily Cases Update");
                     String shareMSG = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
                     intent.putExtra(Intent.EXTRA_TEXT,shareMSG);
                     startActivity(Intent.createChooser(intent, "share by"));

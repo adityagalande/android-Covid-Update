@@ -46,84 +46,149 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_below="@+id/layout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/layout1"
                 android:orientation="vertical">
+
 
                 <EditText
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="17dp"
-                    android:lines="1"
-                    android:maxLines="1"
-                    android:minLines="1"
-                    android:hint="@string/enter_name"
-                    android:textColorHint="#808080"
                     android:backgroundTint="#808080"
+                    android:hint="@string/enter_name"
+                    android:lines="1"
+                    android:maxLines="10"
+                    android:minLines="1"
+                    android:scrollbars="vertical"
                     android:textColor="@color/black"
-                    android:inputType="textPersonName"/>
+                    android:textColorHint="#808080" />
+
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="17dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/name"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:backgroundTint="#808080"-->
+                <!--                        android:hint="@string/enter_name"-->
+                <!--                        android:inputType="textPersonName"-->
+                <!--                        android:lines="1"-->
+                <!--                        android:maxLines="1"-->
+                <!--                        android:minLines="1"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textColorHint="#808080" />-->
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
 
                 <EditText
                     android:id="@+id/emailSubject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="17dp"
-                    android:lines="1"
-                    android:maxLines="4"
-                    android:minLines="1"
-                    android:autofillHints="Feedback of Covid Update application"
-                    android:hint="@string/subject"
-                    android:textColor="@color/black"
-                    android:textColorHint="#808080"
                     android:backgroundTint="#808080"
-                    android:inputType="textEmailSubject"/>
+                    android:hint="@string/subject"
+                    android:lines="1"
+                    android:maxLines="10"
+                    android:minLines="1"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/black"
+                    android:textColorHint="#808080" />
+
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="17dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        -->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:autofillHints="Feedback of Covid Update application"-->
+                <!--                        android:backgroundTint="#808080"-->
+                <!--                        android:hint="@string/subject"-->
+                <!--                        android:inputType="textEmailSubject"-->
+                <!--                        android:lines="1"-->
+                <!--                        android:maxLines="4"-->
+                <!--                        android:minLines="1"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textColorHint="#808080" />-->
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
 
                 <EditText
                     android:id="@+id/emailMessage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="17dp"
+                    android:backgroundTint="#808080"
+                    android:hint="@string/compose_message"
                     android:lines="1"
                     android:maxLines="10"
                     android:minLines="1"
                     android:scrollbars="vertical"
-                    android:hint="@string/compose_message"
-                    android:textColorHint="#808080"
                     android:textColor="@color/black"
-                    android:backgroundTint="#808080"/>
+                    android:textColorHint="#808080" />
 
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="17dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        -->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:backgroundTint="#808080"-->
+                <!--                        android:hint="@string/compose_message"-->
+                <!--                        android:lines="1"-->
+                <!--                        android:maxLines="10"-->
+                <!--                        android:minLines="1"-->
+                <!--                        android:scrollbars="vertical"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textColorHint="#808080" />-->
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:id="@+id/sendSuggestionButon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginRight="80dp"
-                    android:layout_marginBottom="30dp"
-                    android:clickable="true"
-                    android:background="@drawable/ripple_effect_suggestion"
-                    android:elevation="5dp"
-                    android:focusable="true">
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:id="@+id/sendSuggestionButon"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="@string/send_button"
-                        android:textColor="@color/white"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginRight="80dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/ripple_effect_suggestion"
+                        android:clickable="true"
+                        android:elevation="5dp"
+                        android:focusable="true">
 
-                </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="@string/send_button"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
 
@@ -133,7 +198,6 @@
         </RelativeLayout>
 
     </ScrollView>
-
 
 
 </RelativeLayout>

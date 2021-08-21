@@ -20,7 +20,7 @@ public class CasesAdapter extends ArrayAdapter {
     }
 
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "ResourceAsColor"})
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 

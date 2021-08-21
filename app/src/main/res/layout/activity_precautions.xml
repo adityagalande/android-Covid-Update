@@ -24,9 +24,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="17dp"
-                android:padding="20dp"
                 android:background="@drawable/card_design_1"
-                android:elevation="5dp">
+                android:elevation="5dp"
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/titleStayHome"
@@ -51,10 +51,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="4dp"
+                    android:gravity="start"
+                    android:padding="20dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
-                    android:padding="20dp"
-                    android:gravity="start"
                     tools:text="1. Stay Home" />
 
                 <ImageView
@@ -73,9 +73,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="17dp"
-                android:padding="20dp"
                 android:background="@drawable/card_design_1"
-                android:elevation="5dp">
+                android:elevation="5dp"
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/titleHandWash"
@@ -100,10 +100,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="4dp"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
                     android:gravity="start"
                     android:padding="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
                     tools:text="1. Stay Home" />
 
                 <ImageView
@@ -123,9 +123,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="17dp"
-                android:padding="20dp"
                 android:background="@drawable/card_design_1"
-                android:elevation="5dp">
+                android:elevation="5dp"
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/socialDistancing"
@@ -171,9 +171,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="17dp"
-                android:padding="20dp"
                 android:background="@drawable/card_design_1"
-                android:elevation="5dp">
+                android:elevation="5dp"
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/coverMouth"
@@ -198,9 +198,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="4dp"
+                    android:padding="20dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
-                    android:padding="20dp"
                     tools:text="1. Stay Home" />
 
                 <ImageView
@@ -219,9 +219,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="17dp"
-                android:padding="20dp"
                 android:background="@drawable/card_design_1"
-                android:elevation="5dp">
+                android:elevation="5dp"
+                android:padding="20dp">
 
                 <TextView
                     android:id="@+id/disinfect"
@@ -247,9 +247,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="4dp"
+                    android:padding="20dp"
                     android:textColor="@color/black"
                     android:textStyle="italic"
-                    android:padding="20dp"
                     tools:text="1. Stay Home" />
 
                 <ImageView

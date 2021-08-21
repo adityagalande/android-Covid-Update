@@ -21,7 +21,7 @@ import java.util.Objects;
 
 public class DetailCustomIndiaLayout extends AppCompatActivity {
 
-    private AdView mAdView;
+//    private AdView mAdView;
     private PieChart pieChart;
 
     @Override
@@ -35,21 +35,21 @@ public class DetailCustomIndiaLayout extends AppCompatActivity {
         }
 
 
-        //Ad Mob code
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-9365499454983010/8516642823");
-
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        //Ad Mob code
+//        AdView adView = new AdView(this);
+//        adView.setAdSize(AdSize.BANNER);
+//        adView.setAdUnitId("ca-app-pub-9365499454983010/8516642823");
+//
+//
+//        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+//            @Override
+//            public void onInitializationComplete(InitializationStatus initializationStatus) {
+//            }
+//        });
+//
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
 
         pieChart = findViewById(R.id.piechartIndia);

@@ -44,11 +44,14 @@ public class CaseAdapterIndia extends ArrayAdapter<CaseDataIndia> {
         TextView totalDeathsIndiaTextView = listView.findViewById(R.id.totalDeathsIndia);
         totalDeathsIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getTotalDeaths()))));
 
-        TextView totalRecoveredIndiaTextView = listView.findViewById(R.id.totalRecoveredIndia);
-        totalRecoveredIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getTotalRecovered()))));
 
-        TextView activeCasesIndiaTextView = listView.findViewById(R.id.ActiveCasesIndia);
-        activeCasesIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getActiveCases()))));
+//        Temporaryly off----------------------->
+
+//        TextView totalRecoveredIndiaTextView = listView.findViewById(R.id.totalRecoveredIndia);
+//        totalRecoveredIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getTotalRecovered()))));
+//
+//        TextView activeCasesIndiaTextView = listView.findViewById(R.id.ActiveCasesIndia);
+//        activeCasesIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getActiveCases()))));
 
         TextView updatedDateIndiaTextView = listView.findViewById(R.id.updatedDateIndia);
         updatedDateIndiaTextView.setText(itemPosition.getUpdatedAtDate());

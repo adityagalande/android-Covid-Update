@@ -29,8 +29,8 @@ import java.util.List;
 
 public class IndiaCases extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<CaseDataIndia>> {
 
-    private AdView mAdView;
-    private static final String INDIA_JSON_RESPONSE = "https://disease.sh/v3/covid-19/jhucsse";
+//    private AdView mAdView;
+    private static final String INDIA_JSON_RESPONSE = "https://corona.lmao.ninja/v3/covid-19/jhucsse";
     public CaseAdapterIndia IndiaCasesAdapter;
     private static final int INDIA_LOADER_ID = 2;
     private ProgressBar mLoadingIndicator;
@@ -43,21 +43,21 @@ public class IndiaCases extends AppCompatActivity implements LoaderManager.Loade
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.india_action_bar);
 
-        //Ad Mob code
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-9365499454983010/8516642823");
-
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        //Ad Mob code
+//        AdView adView = new AdView(this);
+//        adView.setAdSize(AdSize.BANNER);
+//        adView.setAdUnitId("ca-app-pub-9365499454983010/8516642823");
+//
+//
+//        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+//            @Override
+//            public void onInitializationComplete(InitializationStatus initializationStatus) {
+//            }
+//        });
+//
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         mLoadingIndicator = (ProgressBar) findViewById(R.id.pb_loading_indicator);
 
@@ -66,21 +66,22 @@ public class IndiaCases extends AppCompatActivity implements LoaderManager.Loade
         indialistView.setAdapter(IndiaCasesAdapter);
 
 
-        indialistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                CaseDataIndia caseDataIndia = (CaseDataIndia) (indialistView.getItemAtPosition(position));
-
-                Intent intent = new Intent(getApplicationContext(), DetailCustomIndiaLayout.class);
-                intent.putExtra("provinceName", caseDataIndia.getProvinceName());
-                intent.putExtra("confirmedCases", caseDataIndia.getConfirmedtotalCases());
-                intent.putExtra("totalDeaths", caseDataIndia.getTotalDeaths());
-                intent.putExtra("totalRecovered", caseDataIndia.getTotalRecovered());
-                intent.putExtra("activeCases", caseDataIndia.getActiveCases());
-
-                startActivity(intent);
-            }
-        });
+//        onClicke to show detail data
+//        indialistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                CaseDataIndia caseDataIndia = (CaseDataIndia) (indialistView.getItemAtPosition(position));
+//
+//                Intent intent = new Intent(getApplicationContext(), DetailCustomIndiaLayout.class);
+//                intent.putExtra("provinceName", caseDataIndia.getProvinceName());
+//                intent.putExtra("confirmedCases", caseDataIndia.getConfirmedtotalCases());
+//                intent.putExtra("totalDeaths", caseDataIndia.getTotalDeaths());
+//                intent.putExtra("totalRecovered", caseDataIndia.getTotalRecovered());
+//                intent.putExtra("activeCases", caseDataIndia.getActiveCases());
+//
+//                startActivity(intent);
+//            }
+//        });
 
 
 

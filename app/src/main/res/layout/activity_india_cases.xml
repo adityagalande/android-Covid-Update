@@ -8,6 +8,35 @@
     android:background="#F5F5F5"
     tools:context=".Services.WorldWideCases">
 
+<!--    CUSTOM______SEARCH______BAR-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <SearchView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:iconifiedByDefault="false"-->
+<!--            android:elevation="4dp"-->
+<!--            android:background="#F0F8FF"-->
+<!--            android:queryHint="search" />-->
+
+<!--&lt;!&ndash;        WORK ON IT&ndash;&gt;-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:padding="8dp"-->
+<!--            android:elevation="4dp"-->
+<!--            android:src="@drawable/menu_share"/>-->
+
+<!--    </LinearLayout>-->
+
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -60,25 +89,28 @@
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="110dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0.01dp"
-                    android:background="@color/light_grey2"
-                    android:gravity="center"
-                    android:text="Total Recovered"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0.01dp"
-                    android:background="@color/light_grey2"
-                    android:gravity="center"
-                    android:text="Active Cases"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+<!--                Temporaryly Off-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="110dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_margin="0.01dp"-->
+<!--                    android:background="@color/light_grey2"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Total Recovered"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_margin="0.01dp"-->
+<!--                    android:background="@color/light_grey2"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Active Cases"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textStyle="bold" />-->
 
                 <TextView
                     android:layout_width="140dp"
@@ -124,14 +156,14 @@
 
     </HorizontalScrollView>
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-9365499454983010/8516642823">
-    </com.google.android.gms.ads.AdView>
+<!--    <com.google.android.gms.ads.AdView-->
+<!--        xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/adView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        ads:adSize="BANNER"-->
+<!--        ads:adUnitId="ca-app-pub-9365499454983010/8516642823">-->
+<!--    </com.google.android.gms.ads.AdView>-->
 
 </LinearLayout>

@@ -113,11 +113,10 @@ public class QueryUtilsIndia {
                     JSONObject statsObject = currentJsonObject.getJSONObject("stats");
                     long totalCases = statsObject.getLong("confirmed");
                     long totalDeaths = statsObject.getLong("deaths");
-                    long totalRecovered = statsObject.getLong("recovered");
-
+//                    long totalRecovered = statsObject.getLong("recovered");
                     if (!state.equals("Unknown")) {
 
-                        CaseDataIndia caseDataIndia = new CaseDataIndia(countryName, state, totalCases, totalDeaths, totalRecovered, updatedAt);
+                        CaseDataIndia caseDataIndia = new CaseDataIndia(countryName, state, totalCases, totalDeaths, 20, updatedAt);
                         CaseDataIndiaArrayListData.add(caseDataIndia);
                     }
                 }
