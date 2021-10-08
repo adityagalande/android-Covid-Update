@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Daily Cases Update</string>
+    <string name="app_name">Daily Cases Updates</string>
     <string name="covid_19_daily_update">COVID-19 (Daily Update)</string>
     <string name="episode_2">Episode #2 - SARS-CoV-2</string>
     <string name="episode_1">Episode #1 - Herd immunity</string>
