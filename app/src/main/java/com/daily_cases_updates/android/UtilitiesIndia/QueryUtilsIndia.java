@@ -98,33 +98,59 @@ public class QueryUtilsIndia {
         }
 
         ArrayList<CaseDataIndia> CaseDataIndiaArrayListData = new ArrayList<>();
+//        try {
+//
+//            JSONArray baseJsonObject = new JSONArray(casesJson);
+//            for (int i = 0; i < baseJsonObject.length(); i++) {
+//                JSONObject currentJsonObject = baseJsonObject.getJSONObject(i);
+//                String countryName = currentJsonObject.getString("country");
+//
+//
+//                if (countryName.equals("India")) {
+//                    String updatedAt = currentJsonObject.getString("updatedAt");
+//                    String state = currentJsonObject.getString("province");
+//
+//                    JSONObject statsObject = currentJsonObject.getJSONObject("stats");
+//                    long totalCases = statsObject.getLong("confirmed");
+//                    long totalDeaths = statsObject.getLong("deaths");
+////                    long totalRecovered = statsObject.getLong("recovered");
+//                    if (!state.equals("Unknown")) {
+//
+//                        CaseDataIndia caseDataIndia = new CaseDataIndia(countryName, state, totalCases, totalDeaths, 20, updatedAt);
+//                        CaseDataIndiaArrayListData.add(caseDataIndia);
+//                    }
+//                }
+//
+//            }
+//
+//            return CaseDataIndiaArrayListData;
+//        }
+//
         try {
 
-            JSONArray baseJsonObject = new JSONArray(casesJson);
-            for (int i = 0; i < baseJsonObject.length(); i++) {
-                JSONObject currentJsonObject = baseJsonObject.getJSONObject(i);
-                String countryName = currentJsonObject.getString("country");
+            JSONObject baseJsonObject = new JSONObject(casesJson); //Should be OBJECT insted of ARRAY.............
 
+            JSONArray stateWiseObject = baseJsonObject.getJSONArray("statewise");
+            for (int i = 0; i < stateWiseObject.length(); i++) {
+                JSONObject currentJsonObject = stateWiseObject.getJSONObject(i);
 
-                if (countryName.equals("India")) {
-                    String updatedAt = currentJsonObject.getString("updatedAt");
-                    String state = currentJsonObject.getString("province");
+                String state = currentJsonObject.getString("state");
+                long totalCases = Long.parseLong(currentJsonObject.getString("confirmed"));
+                long newCases = Long.parseLong(currentJsonObject.getString("deltaconfirmed"));
+                long totalDeths = Long.parseLong(currentJsonObject.getString("deaths"));
+                long newDeths = Long.parseLong(currentJsonObject.getString("deltadeaths"));
+                long totalRecovered = Long.parseLong(currentJsonObject.getString("recovered"));
+                long activeCases = Long.parseLong(currentJsonObject.getString("active"));
 
-                    JSONObject statsObject = currentJsonObject.getJSONObject("stats");
-                    long totalCases = statsObject.getLong("confirmed");
-                    long totalDeaths = statsObject.getLong("deaths");
-//                    long totalRecovered = statsObject.getLong("recovered");
-                    if (!state.equals("Unknown")) {
+                    if (!state.equals("Total") && !state.equals("State Unassigned")) {
 
-                        CaseDataIndia caseDataIndia = new CaseDataIndia(countryName, state, totalCases, totalDeaths, 20, updatedAt);
+                        CaseDataIndia caseDataIndia = new CaseDataIndia(state, totalCases, newCases, totalDeths, newDeths, totalRecovered, activeCases);
                         CaseDataIndiaArrayListData.add(caseDataIndia);
                     }
-                }
-
             }
 
             return CaseDataIndiaArrayListData;
-        } catch (JSONException e) {
+        }catch (JSONException e) {
             e.printStackTrace();
         }
         return CaseDataIndiaArrayListData;

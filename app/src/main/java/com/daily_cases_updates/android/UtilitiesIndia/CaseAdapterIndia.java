@@ -36,25 +36,25 @@ public class CaseAdapterIndia extends ArrayAdapter<CaseDataIndia> {
 
 
         TextView StateNameIndiaTextView = listView.findViewById(R.id.StateNameIndia);
-        StateNameIndiaTextView.setText(itemPosition.getProvinceName());
+        StateNameIndiaTextView.setText(itemPosition.getState());
 
         TextView totalCasesIndiaTextView = listView.findViewById(R.id.totalCasesIndia);
-        totalCasesIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getConfirmedtotalCases()))));
+        totalCasesIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getTotalCases()))));
+
+        TextView newCasesIndiaTextView = listView.findViewById(R.id.newCasesIndia);
+        newCasesIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getNewCases()))));
 
         TextView totalDeathsIndiaTextView = listView.findViewById(R.id.totalDeathsIndia);
         totalDeathsIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getTotalDeaths()))));
 
+        TextView newDeathsIndiaTextView = listView.findViewById(R.id.newDeathsIndia);
+        newDeathsIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getNewDeaths()))));
 
-//        Temporaryly off----------------------->
+        TextView totalRecoveredIndiaTextView = listView.findViewById(R.id.totalRecoveredIndia);
+        totalRecoveredIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getTotalRecovered()))));
 
-//        TextView totalRecoveredIndiaTextView = listView.findViewById(R.id.totalRecoveredIndia);
-//        totalRecoveredIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getTotalRecovered()))));
-//
-//        TextView activeCasesIndiaTextView = listView.findViewById(R.id.ActiveCasesIndia);
-//        activeCasesIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getActiveCases()))));
-
-        TextView updatedDateIndiaTextView = listView.findViewById(R.id.updatedDateIndia);
-        updatedDateIndiaTextView.setText(itemPosition.getUpdatedAtDate());
+        TextView activeCasesIndiaTextView = listView.findViewById(R.id.activeCasesIndia);
+        activeCasesIndiaTextView.setText(formatter.format(Double.parseDouble(String.valueOf(itemPosition.getActiveCases()))));
 
         return listView;
     }
