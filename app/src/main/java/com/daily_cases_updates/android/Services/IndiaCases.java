@@ -4,12 +4,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.LoaderManager;
+import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
+import com.daily_cases_updates.android.DetailCustomIndiaLayout;
 import com.daily_cases_updates.android.R;
 import com.daily_cases_updates.android.UtilitiesIndia.CaseAdapterIndia;
 import com.daily_cases_updates.android.UtilitiesIndia.CaseDataIndia;
@@ -21,7 +24,8 @@ import java.util.List;
 public class IndiaCases extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<CaseDataIndia>> {
 
 //    private AdView mAdView;
-    private static final String INDIA_JSON_RESPONSE = "https://corona.lmao.ninja/v3/covid-19/jhucsse";
+//    private static final String INDIA_JSON_RESPONSE = "https://corona.lmao.ninja/v3/covid-19/jhucsse";
+    private static final String INDIA_JSON_RESPONSE = "https://data.covid19india.org/data.json";
     public CaseAdapterIndia IndiaCasesAdapter;
     private static final int INDIA_LOADER_ID = 2;
     private ProgressBar mLoadingIndicator;
@@ -57,22 +61,23 @@ public class IndiaCases extends AppCompatActivity implements LoaderManager.Loade
         indialistView.setAdapter(IndiaCasesAdapter);
 
 
+        //--------------
 //        onClicke to show detail data
-//        indialistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                CaseDataIndia caseDataIndia = (CaseDataIndia) (indialistView.getItemAtPosition(position));
-//
-//                Intent intent = new Intent(getApplicationContext(), DetailCustomIndiaLayout.class);
-//                intent.putExtra("provinceName", caseDataIndia.getProvinceName());
-//                intent.putExtra("confirmedCases", caseDataIndia.getConfirmedtotalCases());
-//                intent.putExtra("totalDeaths", caseDataIndia.getTotalDeaths());
-//                intent.putExtra("totalRecovered", caseDataIndia.getTotalRecovered());
-//                intent.putExtra("activeCases", caseDataIndia.getActiveCases());
-//
-//                startActivity(intent);
-//            }
-//        });
+        indialistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CaseDataIndia caseDataIndia = (CaseDataIndia) (indialistView.getItemAtPosition(position));
+
+                Intent intent = new Intent(getApplicationContext(), DetailCustomIndiaLayout.class);
+                intent.putExtra("provinceName", caseDataIndia.getState());
+                intent.putExtra("confirmedCases", caseDataIndia.getTotalCases());
+                intent.putExtra("totalDeaths", caseDataIndia.getTotalDeaths());
+                intent.putExtra("totalRecovered", caseDataIndia.getTotalRecovered());
+                intent.putExtra("activeCases", caseDataIndia.getActiveCases());
+
+                startActivity(intent);
+            }
+        });
 
 
 
