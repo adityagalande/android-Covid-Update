@@ -30,7 +30,7 @@
             android:paddingTop="80dp"
             android:paddingRight="80dp"
             android:paddingBottom="0dp"
-            android:text="DAILY CASES UPDATES"
+            android:text="@string/app_name"
             android:textAlignment="center"
             android:textColor="#1874CD"
             android:textSize="33sp"

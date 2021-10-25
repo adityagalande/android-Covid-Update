@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.daily_cases_updates.android">
+    package="com.daily_cases_reports.android">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -14,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidUpdate">
 
-        <activity android:name="com.daily_cases_updates.android.DetailCustomUsaLayout"
+        <activity android:name="com.daily_cases_reports.android.DetailCustomUsaLayout"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.daily_cases_updates.android.DetailCustomIndiaLayout"
+            android:name="com.daily_cases_reports.android.DetailCustomIndiaLayout"
             android:screenOrientation="portrait" />
 
         <meta-data
@@ -26,7 +26,7 @@
             android:value="ca-app-pub-9365499454983010~3455887831" />
 
         <activity
-            android:name="com.daily_cases_updates.android.SplashScreen"
+            android:name="com.daily_cases_reports.android.SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,37 +35,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.daily_cases_updates.android.DetailCustomLayout"
+            android:name="com.daily_cases_reports.android.DetailCustomLayout"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.AmericaCases"
+            android:name="com.daily_cases_reports.android.Services.AmericaCases"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.IndiaCases"
+            android:name="com.daily_cases_reports.android.Services.IndiaCases"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.WorldWideCases"
+            android:name="com.daily_cases_reports.android.Services.WorldWideCases"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.Advisory"
+            android:name="com.daily_cases_reports.android.Services.Advisory"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.AboutUs"
+            android:name="com.daily_cases_reports.android.Services.AboutUs"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.Suggestions"
+            android:name="com.daily_cases_reports.android.Services.Suggestions"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.Precautions"
+            android:name="com.daily_cases_reports.android.Services.Precautions"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.MaskTips"
+            android:name="com.daily_cases_reports.android.Services.MaskTips"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.Services.Helpline"
+            android:name="com.daily_cases_reports.android.Services.Helpline"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.daily_cases_updates.android.MainActivity"
+            android:name="com.daily_cases_reports.android.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 
