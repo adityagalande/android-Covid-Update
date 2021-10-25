@@ -4,10 +4,10 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.daily_cases_updates.android"
+        applicationId "com.daily_cases_reports.android"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
