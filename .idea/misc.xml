@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/CovidUpdate/app/src/main/res/layout/activity_about_us.xml" value="0.23867753623188406" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/activity_advisory.xml" value="0.2418478260869565" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/activity_america_cases.xml" value="0.2418478260869565" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/activity_detail_custom_india_layout.xml" value="0.2418478260869565" />
@@ -16,6 +17,7 @@
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/activity_suggestions.xml" value="0.25" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/activity_world_wide_cases.xml" value="0.24048913043478262" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/advisory_action_bar.xml" value="0.36666666666666664" />
+        <entry key="..\:/CovidUpdate/app/src/main/res/layout/custom_advisory_video_layout.xml" value="0.23867753623188406" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/custom_cases_india_layout.xml" value="0.17" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/custom_cases_united_states_layout.xml" value="0.9" />
         <entry key="..\:/CovidUpdate/app/src/main/res/layout/suggestions_action_bar.xml" value="0.2418478260869565" />

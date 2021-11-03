@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Daily Cases Reports</string>
-    <string name="covid_19_daily_update">COVID-19 (Daily Update)</string>
+    <string name="cases_19_daily_update">CASES-19 (Daily Update)</string>
     <string name="episode_2">Episode #2 - SARS-CoV-2</string>
     <string name="episode_1">Episode #1 - Herd immunity</string>
     <string name="episode_3">Episode #3 - COVID-19 Myths Vs Science</string>
