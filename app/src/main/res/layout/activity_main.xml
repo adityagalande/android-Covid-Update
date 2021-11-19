@@ -361,7 +361,7 @@
                     android:elevation="1dp"
                     android:gravity="start"
                     android:padding="7dp"
-                    android:text="COVID19 Safty Essential"
+                    android:text="Basic Safty Essential"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
